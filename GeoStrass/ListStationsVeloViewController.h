@@ -6,9 +6,10 @@
 //  Copyright (c) 2012 unistra. All rights reserved.
 //
 
+#import "DataCTS.h"
 #import <UIKit/UIKit.h>
 
-@interface ListStationsVeloViewController : UIViewController
+@interface ListStationsVeloViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,DataCTSDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *choixModeSegmentedcontrol;
