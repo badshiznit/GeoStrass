@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *cbImageView;
+@property (nonatomic, assign) CLLocationDistance distanceFromUser;
 
 -(void) fillCellWithstation:(StationVelhop*) station;
 -(void)computeDistanceFromLocation:(CLLocation*) coordinate;

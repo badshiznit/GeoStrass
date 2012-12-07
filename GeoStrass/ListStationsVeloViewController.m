@@ -14,6 +14,7 @@
 
 @property(nonatomic,strong) DataCTS* dataCTS;
 @property(nonatomic,strong) NSArray* stations;
+@property(nonatomic,strong) CLLocation* userLocation;
 
 @end
 
@@ -66,7 +67,7 @@
     {
         StationVelhop* station = [self.stations objectAtIndex:indexPath.row];
         [stationCell fillCellWithstation:station];
-        CLLocation* userlocation = [[CLLocation alloc] initWithLatitude:48.577303 longitude:7.767091];
+        CLLocation* userlocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
         [stationCell computeDistanceFromLocation:userlocation];
     }
     
@@ -92,12 +93,24 @@
     }
 }
 
-
 #pragma mark Data CTS Delegate
 
 -(void) didFinishedLoadingData:(NSArray *)stations
 {
-    self.stations = stations;
+    [self trieStationsByDistance:stations];
+}
+
+-(void) trieStationsByDistance :(NSArray*)stations
+{
+    self.userLocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
+    
+    for (StationVelhop* station in stations)
+    {
+        CLLocation* stationLoc = [[CLLocation alloc] initWithLatitude:station.coordinate.latitude
+                                                            longitude:station.coordinate.longitude];
+        station.distanceFromUser = [stationLoc distanceFromLocation:self.userLocation];
+    }
+    self.stations = [StationVelhop sortArrayOfStations:stations];
     [self.tableView reloadData];
 }
 

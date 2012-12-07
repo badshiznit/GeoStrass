@@ -31,19 +31,22 @@
     self.station = station;
     self.nameLabel.text = [station.name substringFromIndex:4];
     int nbAv = station.nbAvailable;
-    int nbTot = station.nbTotal;
-    self.descriptionLabel.text = [NSString stringWithFormat:@"%d Vélos disponibles sur %d",nbAv, nbTot];
+    self.descriptionLabel.text = [NSString stringWithFormat:@"Vélos disponibles : %d",nbAv];
 }
 
 -(void)computeDistanceFromLocation:(CLLocation*) userLocation
 {
     CLLocation* stationLoc = [[CLLocation alloc] initWithLatitude:self.station.coordinate.latitude
                                                         longitude:self.station.coordinate.longitude];
-    CLLocationDistance dist = [stationLoc distanceFromLocation:userLocation];
+     self.distanceFromUser = [stationLoc distanceFromLocation:userLocation];
     
-    NSLog(@"Je suis à %f m de la station %@",dist,self.station.name);
+  //  NSLog(@"Je suis à %d m de la station %@",(int)dist,self.station.name);
+
+     CLLocationDistance dist = self.distanceFromUser + 200;
     
-    self.distanceLabel.text = [NSString stringWithFormat:@"%d m",(int)dist ];
+    NSString* str = (dist > 1000)? [NSString stringWithFormat:@"%.1f km",dist/1000.0f] : [NSString stringWithFormat:@"%d m",(int)dist];
+    
+    self.distanceLabel.text = str;
 }
 
 @end

@@ -19,6 +19,8 @@
 @property(nonatomic,assign) NSInteger nbTotal;
 @property(nonatomic,assign) BOOL hasCB;
 
+@property(nonatomic,assign) CLLocationDistance distanceFromUser;
+
 -(id) initWithId:(NSString*)sid
             name:(NSString*)name
       coordinate:(CLLocationCoordinate2D) coordinate
@@ -27,6 +29,6 @@ nbAvailableBikes:(NSInteger)nbAvailable
     nbTotalBikes:(NSInteger)nbTotal
         andHasCB:(BOOL) hasCB;
 
-
++(NSArray*)sortArrayOfStations:(NSArray*) stations;
 
 @end

@@ -33,6 +33,9 @@
 		566F65B9165ED23C00BEF8B6 /* ListStationsVeloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F65B8165ED23C00BEF8B6 /* ListStationsVeloViewController.m */; };
 		566F65BC165ED40C00BEF8B6 /* MapStationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F65BB165ED40C00BEF8B6 /* MapStationsViewController.m */; };
 		566F65BE165ED65400BEF8B6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566F65BD165ED65400BEF8B6 /* MapKit.framework */; };
+		569D8678166F735300CD4119 /* DataCTS.m in Sources */ = {isa = PBXBuildFile; fileRef = 569D8677166F735300CD4119 /* DataCTS.m */; };
+		569D867C166F806400CD4119 /* StationVelhop.m in Sources */ = {isa = PBXBuildFile; fileRef = 569D867B166F806400CD4119 /* StationVelhop.m */; };
+		569D867F166F8A9B00CD4119 /* StationVeloCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 569D867E166F8A9B00CD4119 /* StationVeloCell.m */; };
 		56E9506F1645BB46001FF70C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E9506E1645BB46001FF70C /* UIKit.framework */; };
 		56E950711645BB46001FF70C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E950701645BB46001FF70C /* Foundation.framework */; };
 		56E950731645BB46001FF70C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E950721645BB46001FF70C /* CoreGraphics.framework */; };
@@ -76,6 +79,12 @@
 		566F65BA165ED40C00BEF8B6 /* MapStationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapStationsViewController.h; sourceTree = "<group>"; };
 		566F65BB165ED40C00BEF8B6 /* MapStationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapStationsViewController.m; sourceTree = "<group>"; };
 		566F65BD165ED65400BEF8B6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		569D8676166F735300CD4119 /* DataCTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCTS.h; sourceTree = "<group>"; };
+		569D8677166F735300CD4119 /* DataCTS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCTS.m; sourceTree = "<group>"; };
+		569D867A166F806400CD4119 /* StationVelhop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationVelhop.h; sourceTree = "<group>"; };
+		569D867B166F806400CD4119 /* StationVelhop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationVelhop.m; sourceTree = "<group>"; };
+		569D867D166F8A9B00CD4119 /* StationVeloCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationVeloCell.h; sourceTree = "<group>"; };
+		569D867E166F8A9B00CD4119 /* StationVeloCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationVeloCell.m; sourceTree = "<group>"; };
 		56E9506A1645BB46001FF70C /* GeoStrass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoStrass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E9506E1645BB46001FF70C /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56E950701645BB46001FF70C /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +183,12 @@
 				566F65B8165ED23C00BEF8B6 /* ListStationsVeloViewController.m */,
 				566F65BA165ED40C00BEF8B6 /* MapStationsViewController.h */,
 				566F65BB165ED40C00BEF8B6 /* MapStationsViewController.m */,
+				569D8676166F735300CD4119 /* DataCTS.h */,
+				569D8677166F735300CD4119 /* DataCTS.m */,
+				569D867A166F806400CD4119 /* StationVelhop.h */,
+				569D867B166F806400CD4119 /* StationVelhop.m */,
+				569D867D166F8A9B00CD4119 /* StationVeloCell.h */,
+				569D867E166F8A9B00CD4119 /* StationVeloCell.m */,
 			);
 			name = Velo;
 			sourceTree = "<group>";
@@ -181,7 +196,6 @@
 		56E9505F1645BB46001FF70C = {
 			isa = PBXGroup;
 			children = (
-				566F65BD165ED65400BEF8B6 /* MapKit.framework */,
 				56E950741645BB46001FF70C /* GeoStrass */,
 				5612FDBE1645C08300ABD5A0 /* UnitTest */,
 				56E9506D1645BB46001FF70C /* Frameworks */,
@@ -203,6 +217,7 @@
 		56E9506D1645BB46001FF70C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				566F65BD165ED65400BEF8B6 /* MapKit.framework */,
 				56E9506E1645BB46001FF70C /* UIKit.framework */,
 				56E950701645BB46001FF70C /* Foundation.framework */,
 				56E950721645BB46001FF70C /* CoreGraphics.framework */,
@@ -405,6 +420,9 @@
 				5612FDF51645C49200ABD5A0 /* VeloViewController.m in Sources */,
 				566F65B9165ED23C00BEF8B6 /* ListStationsVeloViewController.m in Sources */,
 				566F65BC165ED40C00BEF8B6 /* MapStationsViewController.m in Sources */,
+				569D8678166F735300CD4119 /* DataCTS.m in Sources */,
+				569D867C166F806400CD4119 /* StationVelhop.m in Sources */,
+				569D867F166F8A9B00CD4119 /* StationVeloCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
