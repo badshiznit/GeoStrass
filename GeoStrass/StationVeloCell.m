@@ -30,8 +30,25 @@
 {
     self.station = station;
     self.nameLabel.text = [station.name substringFromIndex:4];
-    int nbAv = station.nbAvailable;
-    self.descriptionLabel.text = [NSString stringWithFormat:@"Vélos disponibles : %d",nbAv];
+    
+    if(!self.userOnBike)
+    {
+        int nbAv = station.nbAvailable;
+        self.descriptionLabel.text = [NSString stringWithFormat:@"Vélos disponibles : %d",nbAv];
+    }
+    else
+    {
+        int nbUsed = station.nbUsed;
+        self.descriptionLabel.text = [NSString stringWithFormat:@"Places disponibles : %d",nbUsed];
+    }
+    
+    self.cbImageView.highlighted = station.hasCB;
+    CGFloat alpha  = 0;
+    if(station.hasCB)
+        alpha = 1.0f;
+    else
+        alpha = 0.1f;
+    self.cbImageView.alpha = alpha;
 }
 
 -(void)computeDistanceFromLocation:(CLLocation*) userLocation
@@ -39,8 +56,6 @@
     CLLocation* stationLoc = [[CLLocation alloc] initWithLatitude:self.station.coordinate.latitude
                                                         longitude:self.station.coordinate.longitude];
      self.distanceFromUser = [stationLoc distanceFromLocation:userLocation];
-    
-  //  NSLog(@"Je suis à %d m de la station %@",(int)dist,self.station.name);
 
      CLLocationDistance dist = self.distanceFromUser + 200;
     

@@ -16,6 +16,8 @@
 @property(nonatomic,strong) NSArray* stations;
 @property(nonatomic,strong) CLLocation* userLocation;
 
+@property(nonatomic,assign) BOOL userOnBike;
+
 @end
 
 @implementation ListStationsVeloViewController
@@ -66,6 +68,7 @@
     if(stationCell)
     {
         StationVelhop* station = [self.stations objectAtIndex:indexPath.row];
+        stationCell.userOnBike = self.userOnBike;
         [stationCell fillCellWithstation:station];
         CLLocation* userlocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
         [stationCell computeDistanceFromLocation:userlocation];
@@ -83,14 +86,22 @@
 
 - (IBAction)choixModeChange:(id)sender
 {
+    self.choixModeSegmentedcontrol = (UISegmentedControl*) sender;
     if(self.choixModeSegmentedcontrol.selectedSegmentIndex == 0)
     {
         self.title = @"Velo";
+        self.userOnBike = YES;
     }
     else
     {
-        self.title = @"Pied";        
+        self.title = @"Pied";
+        self.userOnBike = NO;
     }
+    
+    [self.tableView reloadData];
+}
+
+- (IBAction)refreshAction:(id)sender {
 }
 
 #pragma mark Data CTS Delegate

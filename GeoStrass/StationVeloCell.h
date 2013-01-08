@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *cbImageView;
 @property (nonatomic, assign) CLLocationDistance distanceFromUser;
 
+@property (nonatomic,assign) BOOL userOnBike;
+
 -(void) fillCellWithstation:(StationVelhop*) station;
 -(void)computeDistanceFromLocation:(CLLocation*) coordinate;
 

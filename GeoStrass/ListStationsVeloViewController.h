@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *choixModeSegmentedcontrol;
 
+
 - (IBAction)choixModeChange:(id)sender;
+- (IBAction)refreshAction:(id)sender;
 
 @end
