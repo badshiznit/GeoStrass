@@ -28,6 +28,10 @@
 		564391B0169C42F600C03B62 /* noCB.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391AE169C42F600C03B62 /* noCB.png */; };
 		564391B4169C442C00C03B62 /* no_cb.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391B2169C442C00C03B62 /* no_cb.png */; };
 		564391B5169C442C00C03B62 /* cbb.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391B3169C442C00C03B62 /* cbb.png */; };
+		564391B7169C6E3400C03B62 /* veloBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391B6169C6E3300C03B62 /* veloBackground.png */; };
+		564391BD169C749C00C03B62 /* StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391BC169C749C00C03B62 /* StationViewController.m */; };
+		564391BF169C821800C03B62 /* velhop.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391BE169C821700C03B62 /* velhop.png */; };
+		564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391CD169CBF2200C03B62 /* StationAnnotation.m */; };
 		56670DCA165EBCFB0058A149 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC4165EBCFB0058A149 /* bus.png */; };
 		56670DCB165EBCFB0058A149 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC5165EBCFB0058A149 /* direction.png */; };
 		56670DCC165EBCFB0058A149 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC6165EBCFB0058A149 /* like.png */; };
@@ -76,6 +80,12 @@
 		564391AE169C42F600C03B62 /* noCB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noCB.png; sourceTree = "<group>"; };
 		564391B2169C442C00C03B62 /* no_cb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_cb.png; sourceTree = "<group>"; };
 		564391B3169C442C00C03B62 /* cbb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cbb.png; sourceTree = "<group>"; };
+		564391B6169C6E3300C03B62 /* veloBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veloBackground.png; sourceTree = "<group>"; };
+		564391BB169C749C00C03B62 /* StationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationViewController.h; sourceTree = "<group>"; };
+		564391BC169C749C00C03B62 /* StationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationViewController.m; sourceTree = "<group>"; };
+		564391BE169C821700C03B62 /* velhop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velhop.png; sourceTree = "<group>"; };
+		564391CC169CBF2200C03B62 /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
+		564391CD169CBF2200C03B62 /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
 		56670DC4165EBCFB0058A149 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
 		56670DC5165EBCFB0058A149 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
 		56670DC6165EBCFB0058A149 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
@@ -169,9 +179,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		564391B8169C744400C03B62 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				569D867D166F8A9B00CD4119 /* StationVeloCell.h */,
+				569D867E166F8A9B00CD4119 /* StationVeloCell.m */,
+				566F65B7165ED23C00BEF8B6 /* ListStationsVeloViewController.h */,
+				566F65B8165ED23C00BEF8B6 /* ListStationsVeloViewController.m */,
+			);
+			name = ListView;
+			sourceTree = "<group>";
+		};
+		564391B9169C745100C03B62 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				566F65BA165ED40C00BEF8B6 /* MapStationsViewController.h */,
+				566F65BB165ED40C00BEF8B6 /* MapStationsViewController.m */,
+				564391CC169CBF2200C03B62 /* StationAnnotation.h */,
+				564391CD169CBF2200C03B62 /* StationAnnotation.m */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		564391BA169C747600C03B62 /* Details Station */ = {
+			isa = PBXGroup;
+			children = (
+				564391BB169C749C00C03B62 /* StationViewController.h */,
+				564391BC169C749C00C03B62 /* StationViewController.m */,
+			);
+			name = "Details Station";
+			sourceTree = "<group>";
+		};
 		56670DC3165EBCFB0058A149 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				564391BE169C821700C03B62 /* velhop.png */,
+				564391B6169C6E3300C03B62 /* veloBackground.png */,
 				564391B2169C442C00C03B62 /* no_cb.png */,
 				564391B3169C442C00C03B62 /* cbb.png */,
 				564391AD169C42F600C03B62 /* CB.png */,
@@ -191,16 +234,13 @@
 		566F65B5165ED1CC00BEF8B6 /* Velo */ = {
 			isa = PBXGroup;
 			children = (
-				566F65B7165ED23C00BEF8B6 /* ListStationsVeloViewController.h */,
-				566F65B8165ED23C00BEF8B6 /* ListStationsVeloViewController.m */,
-				566F65BA165ED40C00BEF8B6 /* MapStationsViewController.h */,
-				566F65BB165ED40C00BEF8B6 /* MapStationsViewController.m */,
+				564391BA169C747600C03B62 /* Details Station */,
+				564391B9169C745100C03B62 /* MapView */,
+				564391B8169C744400C03B62 /* ListView */,
 				569D8676166F735300CD4119 /* DataCTS.h */,
 				569D8677166F735300CD4119 /* DataCTS.m */,
 				569D867A166F806400CD4119 /* StationVelhop.h */,
 				569D867B166F806400CD4119 /* StationVelhop.m */,
-				569D867D166F8A9B00CD4119 /* StationVeloCell.h */,
-				569D867E166F8A9B00CD4119 /* StationVeloCell.m */,
 			);
 			name = Velo;
 			sourceTree = "<group>";
@@ -380,6 +420,8 @@
 				564391B0169C42F600C03B62 /* noCB.png in Resources */,
 				564391B4169C442C00C03B62 /* no_cb.png in Resources */,
 				564391B5169C442C00C03B62 /* cbb.png in Resources */,
+				564391B7169C6E3400C03B62 /* veloBackground.png in Resources */,
+				564391BF169C821800C03B62 /* velhop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +481,8 @@
 				569D8678166F735300CD4119 /* DataCTS.m in Sources */,
 				569D867C166F806400CD4119 /* StationVelhop.m in Sources */,
 				569D867F166F8A9B00CD4119 /* StationVeloCell.m in Sources */,
+				564391BD169C749C00C03B62 /* StationViewController.m in Sources */,
+				564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

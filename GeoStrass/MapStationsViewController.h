@@ -7,9 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "StationVelhop.h"
 
-@interface MapStationsViewController : UIViewController
+@class MapStationsViewController;
 
-- (IBAction)done:(id)sender;
+@protocol MapStationsViewControllerDelegate <NSObject>
+
+@required
+
+-(void) didSelectedStation:(StationVelhop*) station;
+
+@end
+
+
+@interface MapStationsViewController : UIViewController<MKMapViewDelegate,MKAnnotation>
+
+@property(nonatomic,strong) id<MapStationsViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIView *vieww;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic,strong) NSArray* stations;
+
+- (IBAction)showUserLocation:(id)sender;
 
 @end

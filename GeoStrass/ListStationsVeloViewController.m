@@ -7,8 +7,9 @@
 //
 
 #import "ListStationsVeloViewController.h"
-
+#import "StationViewController.h"
 #import "StationVeloCell.h"
+
 
 @interface ListStationsVeloViewController ()
 
@@ -17,6 +18,8 @@
 @property(nonatomic,strong) CLLocation* userLocation;
 
 @property(nonatomic,assign) BOOL userOnBike;
+@property(nonatomic,assign) BOOL mapShown;
+@property(nonatomic,strong) MapStationsViewController* mapStationsViewController;
 
 @end
 
@@ -38,6 +41,7 @@
      self.dataCTS = [[DataCTS alloc] initWithUrl:@"http://velhop.strasbourg.eu/tvcstations.xml"];
     self.dataCTS.delegate = self;
     [self.dataCTS loadData];
+    self.title = @"Stations";
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,8 +84,11 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+{    
+    StationViewController* stationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsStationViewController"];
+    stationVC.station = [self.stations objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:stationVC animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES]; 
 }
 
 - (IBAction)choixModeChange:(id)sender
@@ -89,19 +96,52 @@
     self.choixModeSegmentedcontrol = (UISegmentedControl*) sender;
     if(self.choixModeSegmentedcontrol.selectedSegmentIndex == 0)
     {
-        self.title = @"Velo";
         self.userOnBike = YES;
     }
     else
     {
-        self.title = @"Pied";
         self.userOnBike = NO;
     }
     
     [self.tableView reloadData];
 }
 
-- (IBAction)refreshAction:(id)sender {
+- (IBAction)refreshAction:(id)sender
+{
+    
+}
+
+- (IBAction)showMapAction:(id)sender
+{
+    if(!self.mapStationsViewController)
+    {
+        self.mapStationsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mapViewController"];
+        self.mapStationsViewController.stations = self.stations;
+        self.mapStationsViewController.delegate = self;
+    }
+    
+  
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    UIViewAnimationTransition transition = (self.mapShown)? UIViewAnimationTransitionFlipFromRight : UIViewAnimationTransitionFlipFromLeft;
+    [UIView setAnimationTransition:transition
+                           forView:self.view
+                             cache:NO];
+    [UIView commitAnimations];
+    if(!self.mapShown)
+    {
+        //[self.myView removeFromSuperview];
+        [self.view addSubview:self.mapStationsViewController.view];
+        self.showMapButtonItem.title = @"Liste";
+    }
+    else
+    {
+        [self.mapStationsViewController.view removeFromSuperview];
+        self.showMapButtonItem.title = @"Carte";
+    }
+    
+    self.mapShown = !self.mapShown;
 }
 
 #pragma mark Data CTS Delegate
@@ -123,6 +163,16 @@
     }
     self.stations = [StationVelhop sortArrayOfStations:stations];
     [self.tableView reloadData];
+}
+
+
+#pragma mark Map Delegate
+
+-(void) didSelectedStation:(StationVelhop *)station
+{
+    StationViewController* stationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsStationViewController"];
+    stationVC.station = station;
+    [self.navigationController pushViewController:stationVC animated:YES];
 }
 
 @end

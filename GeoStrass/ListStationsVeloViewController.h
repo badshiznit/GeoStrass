@@ -8,14 +8,19 @@
 
 #import "DataCTS.h"
 #import <UIKit/UIKit.h>
+#import "MapStationsViewController.h"
 
-@interface ListStationsVeloViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,DataCTSDelegate>
+@interface ListStationsVeloViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,
+                                                            DataCTSDelegate,MapStationsViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *choixModeSegmentedcontrol;
+@property (strong, nonatomic) IBOutlet UIView *myView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *showMapButtonItem;
 
 
 - (IBAction)choixModeChange:(id)sender;
 - (IBAction)refreshAction:(id)sender;
+- (IBAction)showMapAction:(id)sender;
 
 @end

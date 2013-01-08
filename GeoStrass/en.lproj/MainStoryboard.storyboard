@@ -120,10 +120,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="dWs-Fy-e0F">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="veloBackground.png" id="dWs-Fy-e0F">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="71" sectionHeaderHeight="10" sectionFooterHeight="10" id="dqV-oo-9A7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="71" sectionHeaderHeight="10" sectionFooterHeight="10" id="dqV-oo-9A7">
                                 <rect key="frame" x="0.0" y="40" width="320" height="367"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -155,7 +155,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="no_cb.png" highlightedImage="cbb.png" id="cQJ-cT-PBc">
-                                                    <rect key="frame" x="233" y="6.5" width="40" height="30"/>
+                                                    <rect key="frame" x="233" y="6" width="40" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -195,13 +195,15 @@
                                 <action selector="choixModeChange:" destination="Lai-Qq-2at" eventType="valueChanged" id="Afd-sC-DBs"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="map.png" style="plain" id="DHn-KR-E44">
+                        <barButtonItem key="rightBarButtonItem" title="Carte" style="plain" id="DHn-KR-E44">
                             <connections>
-                                <segue destination="loa-6h-3zb" kind="modal" modalTransitionStyle="flipHorizontal" id="h3b-ck-jml"/>
+                                <action selector="showMapAction:" destination="Lai-Qq-2at" id="xoF-JE-lET"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="myView" destination="lbq-xk-W5t" id="Zxp-7Q-yse"/>
+                        <outlet property="showMapButtonItem" destination="DHn-KR-E44" id="uxG-5M-DA2"/>
                         <outlet property="tableView" destination="dqV-oo-9A7" id="YSp-nj-oPf"/>
                     </connections>
                 </viewController>
@@ -209,32 +211,150 @@
             </objects>
             <point key="canvasLocation" x="814" y="-774"/>
         </scene>
-        <!--Map Stations View Controller - Carte ds stations-->
+        <!--Station View Controller-->
+        <scene sceneID="gNB-UP-2Eu">
+            <objects>
+                <viewController storyboardIdentifier="detailsStationViewController" id="ekQ-63-ywC" customClass="StationViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rbb-SS-bsW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="VRJ-0h-3Yi">
+                                <rect key="frame" x="0.0" y="96" width="320" height="364"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="addressCell" textLabel="J4U-kg-ebT" detailTextLabel="w9N-Ht-vii" rowHeight="58" style="IBUITableViewCellStyleValue2" id="3jm-up-wVa">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="57"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Adresse" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J4U-kg-ebT">
+                                                    <rect key="frame" x="10" y="22" width="67" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="12 Rue de Rome 67000 Strasbourg" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w9N-Ht-vii">
+                                                    <rect key="frame" x="83" y="19" width="207" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="rightDetailCell" textLabel="Lmy-o0-q6I" detailTextLabel="OHI-b1-MQd" style="IBUITableViewCellStyleValue1" id="SRb-JW-Chl">
+                                        <rect key="frame" x="0.0" y="105" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Vélos disponibles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lmy-o0-q6I">
+                                                    <rect key="frame" x="10" y="11" width="145" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OHI-b1-MQd">
+                                                    <rect key="frame" x="271" y="11" width="19" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="goViaMapCell" textLabel="y0G-06-pyR" style="IBUITableViewCellStyleDefault" id="kXn-YT-vR5">
+                                        <rect key="frame" x="0.0" y="149" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Y aller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y0G-06-pyR">
+                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ekQ-63-ywC" id="p4V-3y-dMj"/>
+                                    <outlet property="delegate" destination="ekQ-63-ywC" id="uJH-yD-W9r"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="velhop.png" id="Gje-Nm-Pnc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lp5-U1-7o9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1304" y="522"/>
+        </scene>
+        <!--Map Stations View Controller-->
         <scene sceneID="URY-7h-VG0">
             <objects>
-                <viewController id="3Cv-qW-hGC" customClass="MapStationsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapViewController" id="3Cv-qW-hGC" customClass="MapStationsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="juO-V4-UbE">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="22A-J1-MPf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="-38" width="320" height="542"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3Cv-qW-hGC" id="9CR-bg-GNY"/>
+                                </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dUg-OD-DiP">
+                                <rect key="frame" x="0.0" y="305" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="CL">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showUserLocation:" destination="3Cv-qW-hGC" eventType="touchUpInside" id="7OS-en-9JB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Carte ds stations" id="RVs-ma-yEF">
-                        <barButtonItem key="rightBarButtonItem" title="List" id="81f-a6-jmB">
-                            <connections>
-                                <action selector="done:" destination="3Cv-qW-hGC" id="oJx-OY-Zjd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="22A-J1-MPf" id="wEf-ex-5Pr"/>
+                        <outlet property="vieww" destination="juO-V4-UbE" id="xQq-uB-rDr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjK-29-ZPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1817" y="-1295"/>
+            <point key="canvasLocation" x="1389" y="-805"/>
         </scene>
         <!--View Controller - Mes trajets-->
         <scene sceneID="0qK-Rl-Q9p">
@@ -360,24 +480,6 @@
             </objects>
             <point key="canvasLocation" x="369" y="1270"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TLt-Ve-yUS">
-            <objects>
-                <navigationController id="loa-6h-3zb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MFr-lV-hpF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3Cv-qW-hGC" kind="relationship" relationship="rootViewController" id="Aub-6u-2mc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rAH-8q-KyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1255" y="-1307"/>
-        </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="nqS-5M-8Zb">
             <objects>
@@ -401,10 +503,11 @@
     <resources>
         <image name="cbb.png" width="290" height="183"/>
         <image name="direction.png" width="33" height="49"/>
-        <image name="map.png" width="35" height="30"/>
         <image name="no_cb.png" width="290" height="183"/>
         <image name="tram.png" width="33" height="33"/>
+        <image name="velhop.png" width="1053" height="320"/>
         <image name="velo.png" width="20" height="20"/>
+        <image name="veloBackground.png" width="1053" height="918"/>
         <image name="walk.png" width="30" height="30"/>
     </resources>
     <classes>
@@ -413,14 +516,19 @@
             <relationships>
                 <relationship kind="action" name="choixModeChange:"/>
                 <relationship kind="action" name="refreshAction:"/>
+                <relationship kind="action" name="showMapAction:"/>
                 <relationship kind="outlet" name="choixModeSegmentedcontrol" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="showMapButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="MapStationsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapStationsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="done:"/>
+                <relationship kind="action" name="showUserLocation:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="vieww" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="StationVeloCell" superclassName="UITableViewCell">
@@ -431,6 +539,9 @@
                 <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="StationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
