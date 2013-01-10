@@ -1,0 +1,234 @@
+<wsdl:definitions targetNamespace="http://www.cts-strasbourg.fr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.cts-strasbourg.fr/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.cts-strasbourg.fr/">
+<s:element name="rechercherCodesArretsDepuisLibelle">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Saisie" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="NoPage" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="rechercherCodesArretsDepuisLibelleResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="rechercherCodesArretsDepuisLibelleResult" type="tns:MessageRechercheCodeArret"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="MessageRechercheCodeArret">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Suite" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="ListeArret" type="tns:ArrayOfArret"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfArret">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Arret" nillable="true" type="tns:Arret"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Arret">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Libelle" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="CredentialHeader" type="tns:CredentialHeader"/>
+<s:complexType name="CredentialHeader">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="MDP" type="s:string"/>
+</s:sequence>
+<s:anyAttribute/>
+</s:complexType>
+<s:element name="rechercheProchainesArriveesWeb">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="CodeArret" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Mode" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Heure" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="NbHoraires" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="rechercheProchainesArriveesWebResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="rechercheProchainesArriveesWebResult" type="tns:MessageArriveesAppliWeb"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="MessageArriveesAppliWeb">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ListeArrivee" type="tns:ArrayOfArrivee"/>
+<s:element minOccurs="0" maxOccurs="1" name="LibelleArret" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="HeureDemande" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfArrivee">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Arrivee" nillable="true" type="tns:Arrivee"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Arrivee">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Mode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Destination" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Horaire" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="EstApresMinuit" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+<s:element name="rechercheFichesHoraires">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="CodeArret" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="rechercheFichesHorairesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="rechercheFichesHorairesResult" type="tns:MessageFichesHoraires"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="MessageFichesHoraires">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="FichesHoraires" type="tns:ArrayOfFicheHoraire"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfFicheHoraire">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="FicheHoraire" nillable="true" type="tns:FicheHoraire"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="FicheHoraire">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LibelleDestination" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Url" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="DebutValidite" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="FinValidite" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="TypePeriode" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="LibellePeriode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="CodeArret" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Ligne" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="rechercherCodesArretsDepuisLibelleSoapIn">
+<wsdl:part name="parameters" element="tns:rechercherCodesArretsDepuisLibelle"/>
+</wsdl:message>
+<wsdl:message name="rechercherCodesArretsDepuisLibelleSoapOut">
+<wsdl:part name="parameters" element="tns:rechercherCodesArretsDepuisLibelleResponse"/>
+</wsdl:message>
+<wsdl:message name="rechercherCodesArretsDepuisLibelleCredentialHeader">
+<wsdl:part name="CredentialHeader" element="tns:CredentialHeader"/>
+</wsdl:message>
+<wsdl:message name="rechercheProchainesArriveesWebSoapIn">
+<wsdl:part name="parameters" element="tns:rechercheProchainesArriveesWeb"/>
+</wsdl:message>
+<wsdl:message name="rechercheProchainesArriveesWebSoapOut">
+<wsdl:part name="parameters" element="tns:rechercheProchainesArriveesWebResponse"/>
+</wsdl:message>
+<wsdl:message name="rechercheProchainesArriveesWebCredentialHeader">
+<wsdl:part name="CredentialHeader" element="tns:CredentialHeader"/>
+</wsdl:message>
+<wsdl:message name="rechercheFichesHorairesSoapIn">
+<wsdl:part name="parameters" element="tns:rechercheFichesHoraires"/>
+</wsdl:message>
+<wsdl:message name="rechercheFichesHorairesSoapOut">
+<wsdl:part name="parameters" element="tns:rechercheFichesHorairesResponse"/>
+</wsdl:message>
+<wsdl:message name="rechercheFichesHorairesCredentialHeader">
+<wsdl:part name="CredentialHeader" element="tns:CredentialHeader"/>
+</wsdl:message>
+<wsdl:portType name="ServiceSoap">
+<wsdl:operation name="rechercherCodesArretsDepuisLibelle">
+<wsdl:input message="tns:rechercherCodesArretsDepuisLibelleSoapIn"/>
+<wsdl:output message="tns:rechercherCodesArretsDepuisLibelleSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="rechercheProchainesArriveesWeb">
+<wsdl:input message="tns:rechercheProchainesArriveesWebSoapIn"/>
+<wsdl:output message="tns:rechercheProchainesArriveesWebSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="rechercheFichesHoraires">
+<wsdl:input message="tns:rechercheFichesHorairesSoapIn"/>
+<wsdl:output message="tns:rechercheFichesHorairesSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="rechercherCodesArretsDepuisLibelle">
+<soap:operation soapAction="http://www.cts-strasbourg.fr/rechercherCodesArretsDepuisLibelle" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+<soap:header message="tns:rechercherCodesArretsDepuisLibelleCredentialHeader" part="CredentialHeader" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="rechercheProchainesArriveesWeb">
+<soap:operation soapAction="http://www.cts-strasbourg.fr/rechercheProchainesArriveesWeb" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+<soap:header message="tns:rechercheProchainesArriveesWebCredentialHeader" part="CredentialHeader" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="rechercheFichesHoraires">
+<soap:operation soapAction="http://www.cts-strasbourg.fr/rechercheFichesHoraires" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+<soap:header message="tns:rechercheFichesHorairesCredentialHeader" part="CredentialHeader" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="rechercherCodesArretsDepuisLibelle">
+<soap12:operation soapAction="http://www.cts-strasbourg.fr/rechercherCodesArretsDepuisLibelle" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+<soap12:header message="tns:rechercherCodesArretsDepuisLibelleCredentialHeader" part="CredentialHeader" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="rechercheProchainesArriveesWeb">
+<soap12:operation soapAction="http://www.cts-strasbourg.fr/rechercheProchainesArriveesWeb" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+<soap12:header message="tns:rechercheProchainesArriveesWebCredentialHeader" part="CredentialHeader" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="rechercheFichesHoraires">
+<soap12:operation soapAction="http://www.cts-strasbourg.fr/rechercheFichesHoraires" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+<soap12:header message="tns:rechercheFichesHorairesCredentialHeader" part="CredentialHeader" use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="Service">
+<wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+<soap:address location="http://tr.cts-strasbourg.fr/HorTRwebserviceExtv3/Service.asmx"/>
+</wsdl:port>
+<wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+<soap12:address location="http://tr.cts-strasbourg.fr/HorTRwebserviceExtv3/Service.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

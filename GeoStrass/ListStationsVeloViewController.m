@@ -102,6 +102,8 @@
     {
         self.userOnBike = NO;
     }
+    if(self.mapStationsViewController)
+        [self.mapStationsViewController changeMode:self.userOnBike];
     
     [self.tableView reloadData];
 }
@@ -116,6 +118,7 @@
     if(!self.mapStationsViewController)
     {
         self.mapStationsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mapViewController"];
+        self.mapStationsViewController.userOnBike = self.userOnBike;
         self.mapStationsViewController.stations = self.stations;
         self.mapStationsViewController.delegate = self;
     }

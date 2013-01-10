@@ -13,6 +13,7 @@
 @interface StationAnnotation : NSObject<MKAnnotation>
 
 @property(nonatomic,strong) StationVelhop* station;
+@property(nonatomic,assign) BOOL userOnBike;
 
 -(id) initWithStation:(StationVelhop*) station;
 

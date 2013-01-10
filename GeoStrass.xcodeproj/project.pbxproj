@@ -32,6 +32,9 @@
 		564391BD169C749C00C03B62 /* StationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391BC169C749C00C03B62 /* StationViewController.m */; };
 		564391BF169C821800C03B62 /* velhop.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391BE169C821700C03B62 /* velhop.png */; };
 		564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391CD169CBF2200C03B62 /* StationAnnotation.m */; };
+		564391D4169F1DBE00C03B62 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391D3169F1DBD00C03B62 /* arrow.png */; };
+		564391D8169F1DE500C03B62 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391D7169F1DE500C03B62 /* PullRefreshTableViewController.m */; };
+		564391DA169F203C00C03B62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564391D9169F203C00C03B62 /* QuartzCore.framework */; };
 		56670DCA165EBCFB0058A149 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC4165EBCFB0058A149 /* bus.png */; };
 		56670DCB165EBCFB0058A149 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC5165EBCFB0058A149 /* direction.png */; };
 		56670DCC165EBCFB0058A149 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC6165EBCFB0058A149 /* like.png */; };
@@ -86,6 +89,10 @@
 		564391BE169C821700C03B62 /* velhop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velhop.png; sourceTree = "<group>"; };
 		564391CC169CBF2200C03B62 /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
 		564391CD169CBF2200C03B62 /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
+		564391D3169F1DBD00C03B62 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		564391D6169F1DE500C03B62 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		564391D7169F1DE500C03B62 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		564391D9169F203C00C03B62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56670DC4165EBCFB0058A149 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
 		56670DC5165EBCFB0058A149 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
 		56670DC6165EBCFB0058A149 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
@@ -144,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564391DA169F203C00C03B62 /* QuartzCore.framework in Frameworks */,
 				566F65BE165ED65400BEF8B6 /* MapKit.framework in Frameworks */,
 				56E9506F1645BB46001FF70C /* UIKit.framework in Frameworks */,
 				56E950711645BB46001FF70C /* Foundation.framework in Frameworks */,
@@ -210,9 +218,19 @@
 			name = "Details Station";
 			sourceTree = "<group>";
 		};
+		564391D5169F1DD400C03B62 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				564391D6169F1DE500C03B62 /* PullRefreshTableViewController.h */,
+				564391D7169F1DE500C03B62 /* PullRefreshTableViewController.m */,
+			);
+			name = PullToRefresh;
+			sourceTree = "<group>";
+		};
 		56670DC3165EBCFB0058A149 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				564391D3169F1DBD00C03B62 /* arrow.png */,
 				564391BE169C821700C03B62 /* velhop.png */,
 				564391B6169C6E3300C03B62 /* veloBackground.png */,
 				564391B2169C442C00C03B62 /* no_cb.png */,
@@ -269,6 +287,7 @@
 		56E9506D1645BB46001FF70C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				564391D9169F203C00C03B62 /* QuartzCore.framework */,
 				566F65BD165ED65400BEF8B6 /* MapKit.framework */,
 				56E9506E1645BB46001FF70C /* UIKit.framework */,
 				56E950701645BB46001FF70C /* Foundation.framework */,
@@ -281,6 +300,7 @@
 		56E950741645BB46001FF70C /* GeoStrass */ = {
 			isa = PBXGroup;
 			children = (
+				564391D5169F1DD400C03B62 /* PullToRefresh */,
 				566F65B5165ED1CC00BEF8B6 /* Velo */,
 				56670DC3165EBCFB0058A149 /* images */,
 				56E9507D1645BB46001FF70C /* AppDelegate.h */,
@@ -422,6 +442,7 @@
 				564391B5169C442C00C03B62 /* cbb.png in Resources */,
 				564391B7169C6E3400C03B62 /* veloBackground.png in Resources */,
 				564391BF169C821800C03B62 /* velhop.png in Resources */,
+				564391D4169F1DBE00C03B62 /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +504,7 @@
 				569D867F166F8A9B00CD4119 /* StationVeloCell.m in Sources */,
 				564391BD169C749C00C03B62 /* StationViewController.m in Sources */,
 				564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */,
+				564391D8169F1DE500C03B62 /* PullRefreshTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

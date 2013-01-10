@@ -26,7 +26,10 @@
 
 - (NSString *)subtitle
 {
-    return [NSString stringWithFormat:@"Places disponibles : %d",self.station.nbAvailable];
+    if(self.userOnBike)
+        return [NSString stringWithFormat:@"Places disponibles : %d",self.station.nbUsed];
+    else
+        return [NSString stringWithFormat:@"Vélos disponibles : %d",self.station.nbAvailable];
 }
 
 - (CLLocationCoordinate2D)coordinate

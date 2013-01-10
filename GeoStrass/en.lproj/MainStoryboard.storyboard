@@ -43,7 +43,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGF-66-Pe6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="-774"/>
+            <point key="canvasLocation" x="301" y="-759"/>
         </scene>
         <!--List Stations Velo View Controller-->
         <scene sceneID="lg0-5t-00J">
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PL9-Di-Xzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="-1473"/>
+            <point key="canvasLocation" x="-96" y="-1457"/>
         </scene>
         <!--List Stations Velo View Controller-->
         <scene sceneID="OXi-Br-7ua">
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qK7-oh-GHB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="-774"/>
+            <point key="canvasLocation" x="824" y="-798"/>
         </scene>
         <!--Station View Controller-->
         <scene sceneID="gNB-UP-2Eu">
@@ -510,40 +510,6 @@
         <image name="veloBackground.png" width="1053" height="918"/>
         <image name="walk.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="ListStationsVeloViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListStationsVeloViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="choixModeChange:"/>
-                <relationship kind="action" name="refreshAction:"/>
-                <relationship kind="action" name="showMapAction:"/>
-                <relationship kind="outlet" name="choixModeSegmentedcontrol" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="showMapButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MapStationsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapStationsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showUserLocation:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="vieww" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="StationVeloCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationVeloCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cbImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="StationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

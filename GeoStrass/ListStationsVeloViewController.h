@@ -9,8 +9,9 @@
 #import "DataCTS.h"
 #import <UIKit/UIKit.h>
 #import "MapStationsViewController.h"
+#import "PullRefreshTableViewController.h"
 
-@interface ListStationsVeloViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,
+@interface ListStationsVeloViewController : PullRefreshTableViewController<UITableViewDataSource,UITableViewDelegate,
                                                             DataCTSDelegate,MapStationsViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

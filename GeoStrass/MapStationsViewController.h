@@ -27,7 +27,10 @@
 @property (strong, nonatomic) IBOutlet UIView *vieww;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic,strong) NSArray* stations;
+@property(nonatomic,assign) BOOL userOnBike;
 
 - (IBAction)showUserLocation:(id)sender;
+
+-(void) changeMode:(BOOL) userOnBike;
 
 @end

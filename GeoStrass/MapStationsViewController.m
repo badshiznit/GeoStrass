@@ -43,6 +43,7 @@
     for (StationVelhop* station in self.stations)
     {
         StationAnnotation* annotation = [[StationAnnotation alloc] initWithStation:station];
+        annotation.userOnBike = self.userOnBike;
         [self.mapView addAnnotation:annotation];
     }
 }
@@ -129,5 +130,32 @@
     [self.delegate didSelectedStation:stAnn.station];
 }
 
+#pragma mark -- Change Mode
+
+-(void) changeMode:(BOOL) userOnBike
+{
+    self.userOnBike = userOnBike;
+    [self reloadPins];
+}
+
+-(void) reloadPins
+{
+    for (id object in self.mapView.annotations)
+    {
+        if([object isKindOfClass:[StationAnnotation class]])
+        {
+            StationAnnotation* ann = (StationAnnotation*) object;
+            ann.userOnBike = self.userOnBike;
+        }
+    }
+    
+    NSArray* anns = [self.mapView selectedAnnotations];
+    NSLog(@"Annotations ouvertes : %@",anns.description);
+    for (StationAnnotation* ann in anns)
+    {
+        [self.mapView deselectAnnotation:ann animated:YES];
+        [self.mapView selectAnnotation:ann animated:YES];
+    }
+}
 
 @end
