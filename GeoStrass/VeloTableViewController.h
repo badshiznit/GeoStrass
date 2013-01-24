@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullRefreshTableViewController.h"
 
-@interface VeloViewController : UIViewController
+@interface VeloTableViewController : UITableViewController
 
 @end

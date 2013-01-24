@@ -6,18 +6,24 @@
 //  Copyright (c) 2012 unistra. All rights reserved.
 //
 
-#import "VeloViewController.h"
+#import "VeloTableViewController.h"
 
-@interface VeloViewController ()
+@interface VeloTableViewController ()
 
 @end
 
-@implementation VeloViewController
+@implementation VeloTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"velhop_man.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    NSLog(@"Colors changed");
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "StationVelhop.h"
+#import "LocalisationMgr.h"
 
 @interface StationViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic,strong) StationVelhop* station;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

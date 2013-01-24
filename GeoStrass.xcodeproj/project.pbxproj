@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560F4835169FFE0800F0413D /* mapss.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F4834169FFE0800F0413D /* mapss.png */; };
+		560F483716A006E100F0413D /* bckg.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F483616A006E100F0413D /* bckg.png */; };
+		560F483916A00AB400F0413D /* velhop_man.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F483816A00AB400F0413D /* velhop_man.png */; };
+		560F483D16A01D6300F0413D /* LocalisationMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 560F483C16A01D6300F0413D /* LocalisationMgr.m */; };
+		560F484316A051E400F0413D /* ibikeStrasbourg.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F484216A051E400F0413D /* ibikeStrasbourg.png */; };
+		560F484516A1C07A00F0413D /* station.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 560F484416A1C07A00F0413D /* station.jpg */; };
+		560F484716A1C32800F0413D /* station.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F484616A1C32800F0413D /* station.png */; };
+		560F484916A2D12700F0413D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F484816A2D12700F0413D /* location.png */; };
 		5612FDDB1645C0B800ABD5A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E9506E1645BB46001FF70C /* UIKit.framework */; };
 		5612FDDC1645C0B800ABD5A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E950701645BB46001FF70C /* Foundation.framework */; };
 		5612FDDD1645C0B800ABD5A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E950721645BB46001FF70C /* CoreGraphics.framework */; };
@@ -22,7 +30,7 @@
 		5612FDE81645C0B800ABD5A0 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E950951645BB47001FF70C /* second@2x.png */; };
 		5612FDF01645C0D500ABD5A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612FDC41645C08300ABD5A0 /* main.m */; };
 		5612FDF31645C18C00ABD5A0 /* TestCases.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612FDF21645C18C00ABD5A0 /* TestCases.m */; };
-		5612FDF51645C49200ABD5A0 /* VeloViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612FDF41645C49200ABD5A0 /* VeloViewController.m */; };
+		5612FDF51645C49200ABD5A0 /* VeloTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612FDF41645C49200ABD5A0 /* VeloTableViewController.m */; };
 		5621D559165EC404000236F2 /* walk.png in Resources */ = {isa = PBXBuildFile; fileRef = 5621D558165EC404000236F2 /* walk.png */; };
 		564391AF169C42F600C03B62 /* CB.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391AD169C42F600C03B62 /* CB.png */; };
 		564391B0169C42F600C03B62 /* noCB.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391AE169C42F600C03B62 /* noCB.png */; };
@@ -66,6 +74,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		560F4834169FFE0800F0413D /* mapss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapss.png; sourceTree = "<group>"; };
+		560F483616A006E100F0413D /* bckg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bckg.png; sourceTree = "<group>"; };
+		560F483816A00AB400F0413D /* velhop_man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velhop_man.png; sourceTree = "<group>"; };
+		560F483B16A01D6300F0413D /* LocalisationMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalisationMgr.h; sourceTree = "<group>"; };
+		560F483C16A01D6300F0413D /* LocalisationMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalisationMgr.m; sourceTree = "<group>"; };
+		560F484216A051E400F0413D /* ibikeStrasbourg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ibikeStrasbourg.png; sourceTree = "<group>"; };
+		560F484416A1C07A00F0413D /* station.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = station.jpg; sourceTree = "<group>"; };
+		560F484616A1C32800F0413D /* station.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = station.png; sourceTree = "<group>"; };
+		560F484816A2D12700F0413D /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		5612FDC01645C08300ABD5A0 /* UnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnitTest-Info.plist"; sourceTree = "<group>"; };
 		5612FDC21645C08300ABD5A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5612FDC41645C08300ABD5A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,7 +94,7 @@
 		5612FDEF1645C0B800ABD5A0 /* GeoStrass copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GeoStrass copy-Info.plist"; path = "/Users/amadou.diallo/Documents/projetsFacs/strass/GeoStrass/GeoStrass copy-Info.plist"; sourceTree = "<absolute>"; };
 		5612FDF11645C18C00ABD5A0 /* TestCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCases.h; sourceTree = "<group>"; };
 		5612FDF21645C18C00ABD5A0 /* TestCases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCases.m; sourceTree = "<group>"; };
-		5612FDF41645C49200ABD5A0 /* VeloViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VeloViewController.m; sourceTree = "<group>"; };
+		5612FDF41645C49200ABD5A0 /* VeloTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VeloTableViewController.m; sourceTree = "<group>"; };
 		5621D558165EC404000236F2 /* walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk.png; sourceTree = "<group>"; };
 		564391AD169C42F600C03B62 /* CB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CB.png; sourceTree = "<group>"; };
 		564391AE169C42F600C03B62 /* noCB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noCB.png; sourceTree = "<group>"; };
@@ -124,7 +141,7 @@
 		56E950821645BB46001FF70C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		56E950841645BB46001FF70C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		56E950871645BB47001FF70C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		56E950891645BB47001FF70C /* VeloViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VeloViewController.h; sourceTree = "<group>"; };
+		56E950891645BB47001FF70C /* VeloTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VeloTableViewController.h; sourceTree = "<group>"; };
 		56E9508C1645BB47001FF70C /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		56E9508E1645BB47001FF70C /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		56E950901645BB47001FF70C /* CTSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSViewController.h; sourceTree = "<group>"; };
@@ -163,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560F483A16A01D4300F0413D /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				560F483B16A01D6300F0413D /* LocalisationMgr.h */,
+				560F483C16A01D6300F0413D /* LocalisationMgr.m */,
+			);
+			name = Localisation;
+			sourceTree = "<group>";
+		};
 		5612FDBE1645C08300ABD5A0 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +256,13 @@
 		56670DC3165EBCFB0058A149 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				560F484816A2D12700F0413D /* location.png */,
+				560F484616A1C32800F0413D /* station.png */,
+				560F484416A1C07A00F0413D /* station.jpg */,
+				560F484216A051E400F0413D /* ibikeStrasbourg.png */,
+				560F483816A00AB400F0413D /* velhop_man.png */,
+				560F483616A006E100F0413D /* bckg.png */,
+				560F4834169FFE0800F0413D /* mapss.png */,
 				564391D3169F1DBD00C03B62 /* arrow.png */,
 				564391BE169C821700C03B62 /* velhop.png */,
 				564391B6169C6E3300C03B62 /* veloBackground.png */,
@@ -300,14 +333,15 @@
 		56E950741645BB46001FF70C /* GeoStrass */ = {
 			isa = PBXGroup;
 			children = (
+				560F483A16A01D4300F0413D /* Localisation */,
 				564391D5169F1DD400C03B62 /* PullToRefresh */,
 				566F65B5165ED1CC00BEF8B6 /* Velo */,
 				56670DC3165EBCFB0058A149 /* images */,
 				56E9507D1645BB46001FF70C /* AppDelegate.h */,
 				56E9507E1645BB46001FF70C /* AppDelegate.m */,
 				56E950861645BB47001FF70C /* MainStoryboard.storyboard */,
-				56E950891645BB47001FF70C /* VeloViewController.h */,
-				5612FDF41645C49200ABD5A0 /* VeloViewController.m */,
+				56E950891645BB47001FF70C /* VeloTableViewController.h */,
+				5612FDF41645C49200ABD5A0 /* VeloTableViewController.m */,
 				56E9508C1645BB47001FF70C /* first.png */,
 				56E9508E1645BB47001FF70C /* first@2x.png */,
 				56E950901645BB47001FF70C /* CTSViewController.h */,
@@ -443,6 +477,13 @@
 				564391B7169C6E3400C03B62 /* veloBackground.png in Resources */,
 				564391BF169C821800C03B62 /* velhop.png in Resources */,
 				564391D4169F1DBE00C03B62 /* arrow.png in Resources */,
+				560F4835169FFE0800F0413D /* mapss.png in Resources */,
+				560F483716A006E100F0413D /* bckg.png in Resources */,
+				560F483916A00AB400F0413D /* velhop_man.png in Resources */,
+				560F484316A051E400F0413D /* ibikeStrasbourg.png in Resources */,
+				560F484516A1C07A00F0413D /* station.jpg in Resources */,
+				560F484716A1C32800F0413D /* station.png in Resources */,
+				560F484916A2D12700F0413D /* location.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +537,7 @@
 				56E9507B1645BB46001FF70C /* main.m in Sources */,
 				56E9507F1645BB46001FF70C /* AppDelegate.m in Sources */,
 				56E950921645BB47001FF70C /* CTSViewController.m in Sources */,
-				5612FDF51645C49200ABD5A0 /* VeloViewController.m in Sources */,
+				5612FDF51645C49200ABD5A0 /* VeloTableViewController.m in Sources */,
 				566F65B9165ED23C00BEF8B6 /* ListStationsVeloViewController.m in Sources */,
 				566F65BC165ED40C00BEF8B6 /* MapStationsViewController.m in Sources */,
 				569D8678166F735300CD4119 /* DataCTS.m in Sources */,
@@ -505,6 +546,7 @@
 				564391BD169C749C00C03B62 /* StationViewController.m in Sources */,
 				564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */,
 				564391D8169F1DE500C03B62 /* PullRefreshTableViewController.m in Sources */,
+				560F483D16A01D6300F0413D /* LocalisationMgr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

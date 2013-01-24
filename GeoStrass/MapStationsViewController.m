@@ -29,22 +29,31 @@
 -(void) viewWillAppear:(BOOL)animated
 {
   self.mapView.showsUserLocation = YES;
+  
 }
 
 -(void) viewWillDisappear:(BOOL)animated
 {
-  self.mapView.showsUserLocation = NO;
+  //self.mapView.showsUserLocation = NO;
 }
+
+-(void) mapViewDidFinishLoadingMap:(MKMapView *)mapView
+{
+    [self showLocation:mapView.userLocation.location];
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     for (StationVelhop* station in self.stations)
     {
         StationAnnotation* annotation = [[StationAnnotation alloc] initWithStation:station];
         annotation.userOnBike = self.userOnBike;
         [self.mapView addAnnotation:annotation];
+        [self.mapView selectAnnotation:annotation animated:NO];
+        [self.mapView deselectAnnotation:annotation animated:NO];
     }
 }
 
@@ -74,14 +83,14 @@
 }
 
 - (IBAction)showUserLocation:(id)sender
-{
+{/*
     if(self.stations)
     {
         StationVelhop* st = [self.stations objectAtIndex:0];
         CLLocation* loc = [[CLLocation alloc] initWithLatitude:st.coordinate.latitude longitude:st.coordinate.longitude];
         [self showLocation:loc];
     }
-    else
+    else*/
         [self showLocation:self.mapView.userLocation.location];
 }
 
@@ -109,17 +118,21 @@
     }
     else
     {
+        view.canShowCallout = YES;
         view.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
     }
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     MKAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MapVC"];
-    if(annotation == mapView.userLocation)
-    {
-         annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    }
+   if(annotation != mapView.userLocation)
+   {
+    // annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+  //     annotationView.leftCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+   }
+    
     return annotationView;
 }
 

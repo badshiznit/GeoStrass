@@ -47,7 +47,7 @@
     if(station.hasCB)
         alpha = 1.0f;
     else
-        alpha = 0.1f;
+        alpha = 0.5f;
     self.cbImageView.alpha = alpha;
 }
 
@@ -57,7 +57,7 @@
                                                         longitude:self.station.coordinate.longitude];
      self.distanceFromUser = [stationLoc distanceFromLocation:userLocation];
 
-     CLLocationDistance dist = self.distanceFromUser + 200;
+    CLLocationDistance dist = self.distanceFromUser;// + 200;
     
     NSString* str = (dist > 1000)? [NSString stringWithFormat:@"%.1f km",dist/1000.0f] : [NSString stringWithFormat:@"%d m",(int)dist];
     

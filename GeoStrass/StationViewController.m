@@ -10,6 +10,8 @@
 
 @interface StationViewController ()
 
+@property(nonatomic,strong) UIRefreshControl* refreshControl;
+
 @end
 
 @implementation StationViewController
@@ -28,6 +30,23 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = [self.station.name substringFromIndex:4];
+    
+    // adding Refresh Control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    self.refreshControl.tintColor = VELHOP_COLOR_WITH_ALPHA(1.0);
+    
+    NSString* titre = @"Mise à jour...";
+    NSMutableAttributedString *a = [[NSMutableAttributedString alloc] initWithString:titre];
+    [a addAttribute:NSForegroundColorAttributeName value:VELHOP_COLOR_WITH_ALPHA(1.0) range:NSMakeRange(0, [titre length])];
+    self.refreshControl.attributedTitle = a;
+    
+    // Changing TableView BackGround
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"station.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +57,12 @@
 
 
 #pragma mark - Table view data source
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = VELHOP_COLOR_WITH_ALPHA(1.8);//[UIColor colorWithWhite:0.0 alpha:0.8];;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

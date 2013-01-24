@@ -9,17 +9,25 @@
 #import "ListStationsVeloViewController.h"
 #import "StationViewController.h"
 #import "StationVeloCell.h"
+#import "LocalisationMgr.h"
 
 
 @interface ListStationsVeloViewController ()
 
 @property(nonatomic,strong) DataCTS* dataCTS;
+@property(nonatomic,strong) NSArray* sortedStations;
 @property(nonatomic,strong) NSArray* stations;
 @property(nonatomic,strong) CLLocation* userLocation;
+@property(nonatomic,strong) LocalisationMgr* localisationMgr;
+
 
 @property(nonatomic,assign) BOOL userOnBike;
 @property(nonatomic,assign) BOOL mapShown;
 @property(nonatomic,strong) MapStationsViewController* mapStationsViewController;
+
+@property(nonatomic,strong) NSTimer* timerForRefresh;
+@property(nonatomic,strong) UIRefreshControl* refreshControl;
+@property(nonatomic,strong) UIBarButtonItem* leftBarButtonItem;
 
 @end
 
@@ -42,8 +50,42 @@
     self.dataCTS.delegate = self;
     [self.dataCTS loadData];
     self.title = @"Stations";
-}
+    self.timerForRefresh = [NSTimer scheduledTimerWithTimeInterval:2000.0
+                                                            target:self
+                                                          selector:@selector(refreshData)
+                                                          userInfo:nil
+                                                           repeats:YES];
+    // adding Refresh Control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+    [self.refreshControl beginRefreshing];
+    self.refreshControl.tintColor = VELHOP_COLOR_WITH_ALPHA(1.0);
 
+/*    NSString* titre = @"Mise à jour...";
+    NSMutableAttributedString *a = [[NSMutableAttributedString alloc] initWithString:titre];
+    [a addAttribute:NSForegroundColorAttributeName value:VELHOP_COLOR_WITH_ALPHA(1.0) range:NSMakeRange(0, [titre length])];
+    self.refreshControl.attributedTitle = a;*/
+    
+    // Changing TableView BackGround
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"velhop_man.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    self.tableView.backgroundView = tempImageView;
+    
+    self.leftBarButtonItem = self.navigationItem.leftBarButtonItem;
+    self.navigationItem.leftBarButtonItem = nil;
+    
+    //Changing Navigation bar color
+    self.navigationController.navigationBar.tintColor = VELHOP_COLOR_WITH_ALPHA(0.5);
+    
+    //localisation
+    self.localisationMgr = [LocalisationMgr mgr];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onUserLocationUpdated:)
+                                                 name:@"onUserLocationUpdated" object:nil];
+    [self.localisationMgr getUserLocation];
+}                            
+                        
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -52,6 +94,24 @@
 
 #pragma mark - Table view data source
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   return 70.0f;
+}
+/*
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(self.userOnBike)
+        return [NSString stringWithFormat:@"Je suis à Vélo (%d Stations)",self.sortedStations.count];
+    else
+        return [NSString stringWithFormat:@"Je suis à Pied (%d Stations)",self.sortedStations.count];
+}*/
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -59,7 +119,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.stations.count;
+    return self.sortedStations.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,11 +131,10 @@
     
     if(stationCell)
     {
-        StationVelhop* station = [self.stations objectAtIndex:indexPath.row];
+        StationVelhop* station = [self.sortedStations objectAtIndex:indexPath.row];
         stationCell.userOnBike = self.userOnBike;
         [stationCell fillCellWithstation:station];
-        CLLocation* userlocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
-        [stationCell computeDistanceFromLocation:userlocation];
+        [stationCell computeDistanceFromLocation:self.userLocation];
     }
     
     return cell;
@@ -86,7 +145,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    
     StationViewController* stationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsStationViewController"];
-    stationVC.station = [self.stations objectAtIndex:indexPath.row];
+    stationVC.station = [self.sortedStations objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:stationVC animated:YES];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES]; 
 }
@@ -110,7 +169,17 @@
 
 - (IBAction)refreshAction:(id)sender
 {
-    
+    NSLog(@"Timer : %@",self.timerForRefresh.description);
+    if(self.timerForRefresh.timeInterval > 10)
+    {
+       // [self.timerForRefresh invalidate];
+        [self.dataCTS loadData];
+    }
+}
+
+-(void) refreshData
+{
+    [self.dataCTS loadData];
 }
 
 - (IBAction)showMapAction:(id)sender
@@ -119,7 +188,7 @@
     {
         self.mapStationsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mapViewController"];
         self.mapStationsViewController.userOnBike = self.userOnBike;
-        self.mapStationsViewController.stations = self.stations;
+        self.mapStationsViewController.stations = self.sortedStations;
         self.mapStationsViewController.delegate = self;
     }
     
@@ -137,11 +206,13 @@
         //[self.myView removeFromSuperview];
         [self.view addSubview:self.mapStationsViewController.view];
         self.showMapButtonItem.title = @"Liste";
+        self.navigationItem.leftBarButtonItem = self.leftBarButtonItem;
     }
     else
     {
         [self.mapStationsViewController.view removeFromSuperview];
         self.showMapButtonItem.title = @"Carte";
+        self.navigationItem.leftBarButtonItem = nil;
     }
     
     self.mapShown = !self.mapShown;
@@ -151,21 +222,29 @@
 
 -(void) didFinishedLoadingData:(NSArray *)stations
 {
-    [self trieStationsByDistance:stations];
+    self.stations = stations;
+    [self sortStationsByDistance];
 }
 
--(void) trieStationsByDistance :(NSArray*)stations
+-(void) sortStationsByDistance
 {
-    self.userLocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
+  //  if(!self.userLocation)
+    //    self.userLocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
     
-    for (StationVelhop* station in stations)
+    for (StationVelhop* station in self.stations)
     {
         CLLocation* stationLoc = [[CLLocation alloc] initWithLatitude:station.coordinate.latitude
                                                             longitude:station.coordinate.longitude];
         station.distanceFromUser = [stationLoc distanceFromLocation:self.userLocation];
     }
-    self.stations = [StationVelhop sortArrayOfStations:stations];
+    self.sortedStations = [StationVelhop sortArrayOfStations:self.stations];
+    
     [self.tableView reloadData];
+    if(self.userLocation)
+    {
+    if(self.refreshControl.isRefreshing)
+        [self.refreshControl endRefreshing];
+    }
 }
 
 
@@ -176,6 +255,18 @@
     StationViewController* stationVC = [self.storyboard instantiateViewControllerWithIdentifier:@"detailsStationViewController"];
     stationVC.station = station;
     [self.navigationController pushViewController:stationVC animated:YES];
+}
+
+
+#pragma mark User Locaion Management
+
+-(void) onUserLocationUpdated:(NSNotification*) notification
+{
+    if(notification.object)
+    {
+        self.userLocation = (CLLocation*)notification.object;
+        [self sortStationsByDistance];
+    }
 }
 
 @end

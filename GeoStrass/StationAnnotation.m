@@ -21,7 +21,7 @@
 
 - (NSString *)title
 {
-    return [NSString stringWithFormat:@"%@",self.station.name];
+    return [NSString stringWithFormat:@"%@",[self.station.name substringFromIndex:4]];
 }
 
 - (NSString *)subtitle
