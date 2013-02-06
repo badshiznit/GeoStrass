@@ -1,0 +1,2 @@
+agency_name,agency_url,agency_timezone,agency_phone,agency_fare_url,agency_lang
+"CTS",http://www.cts-strasbourg.fr/,Europe/Paris,0388777070,http://www.cts-strasbourg.fr/Tarifs/TicketsTarifs2012/tabid/691/language/fr-FR/Default.aspx,fr

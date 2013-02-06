@@ -75,7 +75,10 @@ static LocalisationMgr* mgr = nil;
  *      going to use horizontal accuracy as the deciding factor. In other cases, you may wish to use vertical
  *      accuracy, or both together.
  */
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{
     
     NSLog(@"didUpdateToLocation : %@",newLocation.description);
     NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];

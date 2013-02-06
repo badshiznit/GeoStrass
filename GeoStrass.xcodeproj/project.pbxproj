@@ -41,7 +41,6 @@
 		564391BF169C821800C03B62 /* velhop.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391BE169C821700C03B62 /* velhop.png */; };
 		564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391CD169CBF2200C03B62 /* StationAnnotation.m */; };
 		564391D4169F1DBE00C03B62 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391D3169F1DBD00C03B62 /* arrow.png */; };
-		564391D8169F1DE500C03B62 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391D7169F1DE500C03B62 /* PullRefreshTableViewController.m */; };
 		564391DA169F203C00C03B62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564391D9169F203C00C03B62 /* QuartzCore.framework */; };
 		56670DCA165EBCFB0058A149 /* bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC4165EBCFB0058A149 /* bus.png */; };
 		56670DCB165EBCFB0058A149 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC5165EBCFB0058A149 /* direction.png */; };
@@ -70,6 +69,18 @@
 		56E950921645BB47001FF70C /* CTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E950911645BB47001FF70C /* CTSViewController.m */; };
 		56E950941645BB47001FF70C /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E950931645BB47001FF70C /* second.png */; };
 		56E950961645BB47001FF70C /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E950951645BB47001FF70C /* second@2x.png */; };
+		56F6A0A816B1C2BE000ECBA1 /* PersoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F6A0A716B1C2BE000ECBA1 /* PersoTabBarController.m */; };
+		56F6A0AB16B1C615000ECBA1 /* aroundMe.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F6A0A916B1C615000ECBA1 /* aroundMe.png */; };
+		56F6A0AC16B1C615000ECBA1 /* aroundMeSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F6A0AA16B1C615000ECBA1 /* aroundMeSelected.png */; };
+		56FFEB9316BBFB1700FC4D50 /* velhopBck.png in Resources */ = {isa = PBXBuildFile; fileRef = 56FFEB9216BBFB1700FC4D50 /* velhopBck.png */; };
+		56FFEB9516BC0C0C00FC4D50 /* stops.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56FFEB9416BC0C0B00FC4D50 /* stops.txt */; };
+		56FFEB9A16BC0C7200FC4D50 /* AroundMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FFEB9916BC0C7200FC4D50 /* AroundMeTableViewController.m */; };
+		56FFEB9D16BC147000FC4D50 /* Tram+BusStations.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FFEB9C16BC147000FC4D50 /* Tram+BusStations.m */; };
+		56FFEBA116BC1B7A00FC4D50 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FFEBA016BC1B7A00FC4D50 /* Station.m */; };
+		56FFEBA516C017CB00FC4D50 /* trips.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56FFEBA216C017C900FC4D50 /* trips.txt */; };
+		56FFEBA616C017CB00FC4D50 /* routes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56FFEBA316C017CA00FC4D50 /* routes.txt */; };
+		56FFEBA716C017CB00FC4D50 /* stop_times.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56FFEBA416C017CA00FC4D50 /* stop_times.txt */; };
+		56FFEBA916C01DDD00FC4D50 /* stops_infos.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56FFEBA816C01DDC00FC4D50 /* stops_infos.txt */; };
 		D37218169AEE4ADCA372815A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC873DC687446A497C4F1E6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -107,8 +118,6 @@
 		564391CC169CBF2200C03B62 /* StationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationAnnotation.h; sourceTree = "<group>"; };
 		564391CD169CBF2200C03B62 /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
 		564391D3169F1DBD00C03B62 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		564391D6169F1DE500C03B62 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
-		564391D7169F1DE500C03B62 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		564391D9169F203C00C03B62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		56670DC4165EBCFB0058A149 /* bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bus.png; sourceTree = "<group>"; };
 		56670DC5165EBCFB0058A149 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
@@ -148,6 +157,22 @@
 		56E950911645BB47001FF70C /* CTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSViewController.m; sourceTree = "<group>"; };
 		56E950931645BB47001FF70C /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		56E950951645BB47001FF70C /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		56F6A0A616B1C2BD000ECBA1 /* PersoTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersoTabBarController.h; sourceTree = "<group>"; };
+		56F6A0A716B1C2BE000ECBA1 /* PersoTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersoTabBarController.m; sourceTree = "<group>"; };
+		56F6A0A916B1C615000ECBA1 /* aroundMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aroundMe.png; sourceTree = "<group>"; };
+		56F6A0AA16B1C615000ECBA1 /* aroundMeSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aroundMeSelected.png; sourceTree = "<group>"; };
+		56FFEB9216BBFB1700FC4D50 /* velhopBck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = velhopBck.png; sourceTree = "<group>"; };
+		56FFEB9416BC0C0B00FC4D50 /* stops.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.txt; sourceTree = "<group>"; };
+		56FFEB9816BC0C7200FC4D50 /* AroundMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AroundMeTableViewController.h; sourceTree = "<group>"; };
+		56FFEB9916BC0C7200FC4D50 /* AroundMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AroundMeTableViewController.m; sourceTree = "<group>"; };
+		56FFEB9B16BC147000FC4D50 /* Tram+BusStations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tram+BusStations.h"; sourceTree = "<group>"; };
+		56FFEB9C16BC147000FC4D50 /* Tram+BusStations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tram+BusStations.m"; sourceTree = "<group>"; };
+		56FFEB9F16BC1B7A00FC4D50 /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		56FFEBA016BC1B7A00FC4D50 /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		56FFEBA216C017C900FC4D50 /* trips.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = trips.txt; sourceTree = "<group>"; };
+		56FFEBA316C017CA00FC4D50 /* routes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = routes.txt; sourceTree = "<group>"; };
+		56FFEBA416C017CA00FC4D50 /* stop_times.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times.txt; sourceTree = "<group>"; };
+		56FFEBA816C01DDC00FC4D50 /* stops_infos.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops_infos.txt; sourceTree = "<group>"; };
 		5DC873DC687446A497C4F1E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9851E745C84BE4A6E69FEA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -244,18 +269,12 @@
 			name = "Details Station";
 			sourceTree = "<group>";
 		};
-		564391D5169F1DD400C03B62 /* PullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				564391D6169F1DE500C03B62 /* PullRefreshTableViewController.h */,
-				564391D7169F1DE500C03B62 /* PullRefreshTableViewController.m */,
-			);
-			name = PullToRefresh;
-			sourceTree = "<group>";
-		};
 		56670DC3165EBCFB0058A149 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				56FFEB9216BBFB1700FC4D50 /* velhopBck.png */,
+				56F6A0A916B1C615000ECBA1 /* aroundMe.png */,
+				56F6A0AA16B1C615000ECBA1 /* aroundMeSelected.png */,
 				560F484816A2D12700F0413D /* location.png */,
 				560F484616A1C32800F0413D /* station.png */,
 				560F484416A1C07A00F0413D /* station.jpg */,
@@ -333,8 +352,11 @@
 		56E950741645BB46001FF70C /* GeoStrass */ = {
 			isa = PBXGroup;
 			children = (
+				56FFEB9E16BC1B4A00FC4D50 /* Models */,
+				56FFEB9716BC0C4300FC4D50 /* Around me */,
+				56FFEB9616BC0C1000FC4D50 /* Resources */,
+				56F6A0A516B1C1D2000ECBA1 /* External */,
 				560F483A16A01D4300F0413D /* Localisation */,
-				564391D5169F1DD400C03B62 /* PullToRefresh */,
 				566F65B5165ED1CC00BEF8B6 /* Velo */,
 				56670DC3165EBCFB0058A149 /* images */,
 				56E9507D1645BB46001FF70C /* AppDelegate.h */,
@@ -365,6 +387,47 @@
 				56E950841645BB46001FF70C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56F6A0A516B1C1D2000ECBA1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				56F6A0A616B1C2BD000ECBA1 /* PersoTabBarController.h */,
+				56F6A0A716B1C2BE000ECBA1 /* PersoTabBarController.m */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		56FFEB9616BC0C1000FC4D50 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				56FFEBA816C01DDC00FC4D50 /* stops_infos.txt */,
+				56FFEBA216C017C900FC4D50 /* trips.txt */,
+				56FFEBA316C017CA00FC4D50 /* routes.txt */,
+				56FFEBA416C017CA00FC4D50 /* stop_times.txt */,
+				56FFEB9416BC0C0B00FC4D50 /* stops.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		56FFEB9716BC0C4300FC4D50 /* Around me */ = {
+			isa = PBXGroup;
+			children = (
+				56FFEB9816BC0C7200FC4D50 /* AroundMeTableViewController.h */,
+				56FFEB9916BC0C7200FC4D50 /* AroundMeTableViewController.m */,
+				56FFEB9B16BC147000FC4D50 /* Tram+BusStations.h */,
+				56FFEB9C16BC147000FC4D50 /* Tram+BusStations.m */,
+			);
+			name = "Around me";
+			sourceTree = "<group>";
+		};
+		56FFEB9E16BC1B4A00FC4D50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				56FFEB9F16BC1B7A00FC4D50 /* Station.h */,
+				56FFEBA016BC1B7A00FC4D50 /* Station.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +547,14 @@
 				560F484516A1C07A00F0413D /* station.jpg in Resources */,
 				560F484716A1C32800F0413D /* station.png in Resources */,
 				560F484916A2D12700F0413D /* location.png in Resources */,
+				56F6A0AB16B1C615000ECBA1 /* aroundMe.png in Resources */,
+				56F6A0AC16B1C615000ECBA1 /* aroundMeSelected.png in Resources */,
+				56FFEB9316BBFB1700FC4D50 /* velhopBck.png in Resources */,
+				56FFEB9516BC0C0C00FC4D50 /* stops.txt in Resources */,
+				56FFEBA516C017CB00FC4D50 /* trips.txt in Resources */,
+				56FFEBA616C017CB00FC4D50 /* routes.txt in Resources */,
+				56FFEBA716C017CB00FC4D50 /* stop_times.txt in Resources */,
+				56FFEBA916C01DDD00FC4D50 /* stops_infos.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,8 +616,11 @@
 				569D867F166F8A9B00CD4119 /* StationVeloCell.m in Sources */,
 				564391BD169C749C00C03B62 /* StationViewController.m in Sources */,
 				564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */,
-				564391D8169F1DE500C03B62 /* PullRefreshTableViewController.m in Sources */,
 				560F483D16A01D6300F0413D /* LocalisationMgr.m in Sources */,
+				56F6A0A816B1C2BE000ECBA1 /* PersoTabBarController.m in Sources */,
+				56FFEB9A16BC0C7200FC4D50 /* AroundMeTableViewController.m in Sources */,
+				56FFEB9D16BC147000FC4D50 /* Tram+BusStations.m in Sources */,
+				56FFEBA116BC1B7A00FC4D50 /* Station.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

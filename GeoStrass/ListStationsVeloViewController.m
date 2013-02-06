@@ -49,7 +49,7 @@
      self.dataCTS = [[DataCTS alloc] initWithUrl:@"http://velhop.strasbourg.eu/tvcstations.xml"];
     self.dataCTS.delegate = self;
     [self.dataCTS loadData];
-    self.title = @"Stations";
+
     self.timerForRefresh = [NSTimer scheduledTimerWithTimeInterval:2000.0
                                                             target:self
                                                           selector:@selector(refreshData)
@@ -68,7 +68,7 @@
     self.refreshControl.attributedTitle = a;*/
     
     // Changing TableView BackGround
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"velhop_man.png"]];
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"velhopBck.png"]];
     [tempImageView setFrame:self.tableView.frame];
     self.tableView.backgroundView = tempImageView;
     
@@ -76,7 +76,7 @@
     self.navigationItem.leftBarButtonItem = nil;
     
     //Changing Navigation bar color
-    self.navigationController.navigationBar.tintColor = VELHOP_COLOR_WITH_ALPHA(0.5);
+   // self.navigationController.navigationBar.tintColor = VELHOP_COLOR_WITH_ALPHA(0.5);
     
     //localisation
     self.localisationMgr = [LocalisationMgr mgr];
@@ -96,7 +96,13 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];;
+    cell.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
+    
+  /*  NSString* bckImageName = @"cellBckg.png";
+
+    cell.backgroundView = [ [UIImageView alloc]
+                           initWithImage:[[UIImage imageNamed:bckImageName]
+                                          stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];*/
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

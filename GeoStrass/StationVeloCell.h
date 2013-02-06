@@ -19,6 +19,7 @@
 @property (nonatomic, assign) CLLocationDistance distanceFromUser;
 
 @property (nonatomic,assign) BOOL userOnBike;
+@property (strong, nonatomic) IBOutlet UIView *cellView;
 
 -(void) fillCellWithstation:(StationVelhop*) station;
 -(void)computeDistanceFromLocation:(CLLocation*) coordinate;

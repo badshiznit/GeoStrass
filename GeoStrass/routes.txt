@@ -1,0 +1,34 @@
+route_id,route_short_name,route_long_name,route_desc,route_type,route_color,route_text_color
+02-26,2,"Campus d'Illkirch - Pont du Rhin",,3,E2001A,FFFFFF
+10-26,10,"Gare Centrale - Brant Université",,3,FABB00,000000
+12-26,12,"Entzheim Ouest - Lingolsheim Alouettes",,3,89CCCF,000000
+13-26,13,"Montagne Verte - Lingolsheim Gare",,3,F7C9E3,000000
+15-26,15,"Lingolsheim Alouettes - Robertsau Boecklin",,3,004A99,FFFFFF
+22-26,22,"Holtzheim Ouest - Lingolsheim Alouettes",,3,89CCCF,000000
+25-26,15a,"Sainte Anne - République",,3,89CCCF,000000
+50-26,50,"Montagne Verte - Wacken",,3,FFDD00,000000
+A-457,A,"Hautepierre Maillon - Illkirch Lixenbuhl",,0,E2001A,FFFFFF
+D-457,D,"Rotonde - Aristide Briand",,0,009932,FFFFFF
+B-457,B,"Lingolsheim Tiergaertel - Hoenheim Gare",,0,009EE0,FFFFFF
+F-457,F,"Elsau - Place d'Islande",,0,B1C800,FFFFFF
+04-26,4,"Wolfisheim / Hautepierre - Reichstett",,3,CC071E,FFFFFF
+06-26,6,"Robertsau Pont Phario - Niederhausbergen / Hoenheim",,3,7D5D9F,FFFFFF
+17-26,17,"Cronenbourg / Les Halles - Mittelhausbergen",,3,F7DDDD,000000
+19-26,19,"Rotonde - Cronenbourg Arago - Chambre de Métiers",,3,F7C9E3,000000
+70-26,70,"Oberschaeffolsheim - Eckbolsheim - Robertsau",,3,FABB00,000000
+C-457,C,"Gare Centrale - Rodolphe Reuss",,0,F29400,FFFFFF
+E-457,E,"Boecklin - Baggersee",,0,9085BA,FFFFFF
+07-26,7,"Kibitzenau - Illkirch Fort Uhrich",,3,009036,FFFFFF
+14-26,14,"Ancienne Douane - Neuhof Lorient",,3,89CCCF,000000
+24-26,24,"Ancienne Douane - Neuhof Stéphanie",,3,89CCCF,000000
+30-26,30,"Robertsau - Wattwiller",,3,FFDD00,000000
+40-26,40,"Neuhof Ganzau - Unterelsau",,3,FFDD00,000000
+62-26,62,"Baggersee - Graffenstaden / Geispolsheim",,3,F7C9E3,000000
+63-26,63,"Blaesheim / Geispolsheim -  Plobsheim",,3,F7C9DD,000000
+65-26,65,"Lipsheim Gare - Baggersee",,3,F7C9E3,000000
+66-26,66,"Lipsheim Centre - Baggersee",,3,D0AACC,000000
+71-26,71,"Eckwersheim - Les Halles Sebastopol",,3,89CCCF,000000
+72-26,72,"La Wantzenau - Le Golf - République",,3,F7C9DD,000000
+21-365,21,"Kehl Stadthalle - Jean Jaurès",,3,89CCCF,000000
+27-440,27,"Baggersee - Lorient - Eurofret",,3,9FC204,000000
+31-463,31,"Kibitzenau - Wattwiller",,3,F7C9E3,000000

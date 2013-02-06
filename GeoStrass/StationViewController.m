@@ -7,6 +7,7 @@
 //
 
 #import "StationViewController.h"
+#import "LocalisationMgr.h"
 
 @interface StationViewController ()
 
@@ -15,15 +16,6 @@
 @end
 
 @implementation StationViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -45,7 +37,7 @@
     // Changing TableView BackGround
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"station.png"]];
     [tempImageView setFrame:self.tableView.frame];
-    self.tableView.backgroundView = tempImageView;
+   // self.tableView.backgroundView = tempImageView;
     
 }
 
@@ -61,7 +53,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    cell.backgroundColor = VELHOP_COLOR_WITH_ALPHA(1.8);//[UIColor colorWithWhite:0.0 alpha:0.8];;
+    cell.backgroundColor = VELHOP_COLOR_WITH_ALPHA(0.3);//[UIColor colorWithWhite:0.0 alpha:0.8];;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

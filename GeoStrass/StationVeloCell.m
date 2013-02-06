@@ -7,23 +7,28 @@
 //
 
 #import "StationVeloCell.h"
+#import "LocalisationMgr.h"
+#import <QuartzCore/QuartzCore.h>
+
+#define SHADOW_RADIUS 3.0f
+#define SHADOW_OPACITY 0.5f
+#define SHADOW_OFFSET CGSizeMake(1.0f, 1.0f)
+#define SHADOW_COLOR [[UIColor blackColor] CGColor]
 
 @implementation StationVeloCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (void)initViews
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self.cellView.layer.shouldRasterize = NO;
+    self.cellView.layer.shadowColor = (__bridge CGColorRef)([UIColor colorWithRed:150 green:191 blue:48 alpha:1]);// VELHOP_COLOR_WITH_ALPHA(1);
+    self.cellView.layer.shadowOffset = SHADOW_OFFSET;
+    self.cellView.layer.shadowOpacity = SHADOW_OPACITY;
+    self.cellView.layer.shadowRadius = SHADOW_RADIUS;
+    self.cellView.layer.masksToBounds = NO;
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.cellView.bounds];
+    self.cellView.layer.shadowPath = path.CGPath;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-    // Configure the view for the selected state
-}
 
 
 -(void) fillCellWithstation:(StationVelhop*) station
@@ -49,6 +54,8 @@
     else
         alpha = 0.5f;
     self.cbImageView.alpha = alpha;
+    
+    [self initViews];
 }
 
 -(void)computeDistanceFromLocation:(CLLocation*) userLocation
