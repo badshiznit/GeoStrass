@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *choixModeSegmentedcontrol;
 @property (strong, nonatomic) IBOutlet UIView *myView;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *showMapButtonItem;
+@property (strong, nonatomic) IBOutlet UIButton *showMapButtonItem;
 
 
 - (IBAction)choixModeChange:(id)sender;

@@ -77,7 +77,7 @@
 {
     NSLog(@"Show Around Me");
   
-        [self performSegueWithIdentifier:@"pushAroundMeModalVC" sender:self];
+   [self performSegueWithIdentifier:@"pushAroundMeModalVC" sender:self];
 
 }
 
@@ -96,7 +96,6 @@
             UINavigationController* nvc = (UINavigationController*) segue.destinationViewController;
             [nvc setViewControllers:[NSArray arrayWithObject:self.aroundMeTableViewController]];
         }
-
     }
 }
 

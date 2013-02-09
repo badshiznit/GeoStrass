@@ -33,15 +33,6 @@
 
 @implementation ListStationsVeloViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -97,26 +88,12 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     cell.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
-    
-  /*  NSString* bckImageName = @"cellBckg.png";
-
-    cell.backgroundView = [ [UIImageView alloc]
-                           initWithImage:[[UIImage imageNamed:bckImageName]
-                                          stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];*/
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    return 70.0f;
 }
-/*
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    if(self.userOnBike)
-        return [NSString stringWithFormat:@"Je suis à Vélo (%d Stations)",self.sortedStations.count];
-    else
-        return [NSString stringWithFormat:@"Je suis à Pied (%d Stations)",self.sortedStations.count];
-}*/
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -207,21 +184,35 @@
                            forView:self.view
                              cache:NO];
     [UIView commitAnimations];
+    
+    [self modeChangeWithState:self.mapShown];
+    
     if(!self.mapShown)
     {
         //[self.myView removeFromSuperview];
         [self.view addSubview:self.mapStationsViewController.view];
-        self.showMapButtonItem.title = @"Liste";
         self.navigationItem.leftBarButtonItem = self.leftBarButtonItem;
     }
     else
     {
         [self.mapStationsViewController.view removeFromSuperview];
-        self.showMapButtonItem.title = @"Carte";
         self.navigationItem.leftBarButtonItem = nil;
     }
     
     self.mapShown = !self.mapShown;
+}
+
+-(void) modeChangeWithState:(BOOL) selected
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    UIViewAnimationTransition transition = (selected)? UIViewAnimationTransitionFlipFromRight : UIViewAnimationTransitionFlipFromLeft;
+    [UIView setAnimationTransition:transition
+                           forView:self.showMapButtonItem.viewForBaselineLayout
+                             cache:NO];
+    [UIView commitAnimations];
+    
+    self.showMapButtonItem.imageView.highlighted = selected;
 }
 
 #pragma mark Data CTS Delegate

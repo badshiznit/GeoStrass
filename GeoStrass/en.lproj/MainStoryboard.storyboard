@@ -171,15 +171,28 @@
                                 <action selector="choixModeChange:" destination="Lai-Qq-2at" eventType="valueChanged" id="Afd-sC-DBs"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Carte" style="plain" id="DHn-KR-E44">
-                            <connections>
-                                <action selector="showMapAction:" destination="Lai-Qq-2at" id="xoF-JE-lET"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1bs-in-sRG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AAT-hf-MQM">
+                                <rect key="frame" x="285" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="list.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="map.png"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMapAction:" destination="Lai-Qq-2at" eventType="touchUpInside" id="pUu-8S-qIe"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myView" destination="lbq-xk-W5t" id="Zxp-7Q-yse"/>
-                        <outlet property="showMapButtonItem" destination="DHn-KR-E44" id="uxG-5M-DA2"/>
+                        <outlet property="showMapButtonItem" destination="AAT-hf-MQM" id="y1Z-XQ-OS3"/>
                         <outlet property="tableView" destination="dqV-oo-9A7" id="YSp-nj-oPf"/>
                     </connections>
                 </viewController>
@@ -566,12 +579,64 @@
     </scenes>
     <resources>
         <image name="cbb.png" width="290" height="183"/>
+        <image name="list.png" width="54" height="54"/>
         <image name="location.png" width="74" height="60"/>
+        <image name="map.png" width="35" height="35"/>
         <image name="no_cb.png" width="290" height="183"/>
         <image name="velo.png" width="20" height="20"/>
         <image name="veloBackground.png" width="1053" height="320"/>
         <image name="walk.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="AroundMeTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AroundMeTableViewController.h"/>
+        </class>
+        <class className="ListStationsVeloViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListStationsVeloViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="choixModeChange:"/>
+                <relationship kind="action" name="refreshAction:"/>
+                <relationship kind="action" name="showMapAction:"/>
+                <relationship kind="outlet" name="choixModeSegmentedcontrol" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="myView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="showMapButtonItem" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="MapStationsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapStationsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showUserLocation:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="vieww" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="PersoTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersoTabBarController.h"/>
+        </class>
+        <class className="StationVeloCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationVeloCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cbImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="StationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="UIRefreshControl" superclassName="UIControl">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIRefreshControl.h"/>
+        </class>
+        <class className="VeloTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VeloTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
