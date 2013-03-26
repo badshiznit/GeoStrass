@@ -20,7 +20,6 @@
 @property(nonatomic,strong) CLLocation* userLocation;
 @property(nonatomic,strong) LocalisationMgr* localisationMgr;
 
-
 @property(nonatomic,assign) BOOL userOnBike;
 @property(nonatomic,assign) BOOL mapShown;
 @property(nonatomic,strong) MapStationsViewController* mapStationsViewController;
@@ -33,9 +32,25 @@
 
 @implementation ListStationsVeloViewController
 
+#pragma mark - mark Initialization
+
+-(void) initInterface
+{
+    UIButton* button = self.showMapButtonItem;
+    [[button layer] setCornerRadius:5.0f];
+    [[button layer] setMasksToBounds:YES];
+    [[button layer] setBorderWidth:0.0f];
+
+    [self.showMapButtonItem setImage:[UIImage imageNamed:@"map.png"] forState:UIControlStateNormal];
+
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self initInterface];
 	// Do any additional setup after loading the view.
      self.dataCTS = [[DataCTS alloc] initWithUrl:@"http://velhop.strasbourg.eu/tvcstations.xml"];
     self.dataCTS.delegate = self;
@@ -162,6 +177,8 @@
 
 -(void) refreshData
 {
+    self.userLocation = nil;
+    [self.localisationMgr getUserLocation];
     [self.dataCTS loadData];
 }
 
@@ -212,7 +229,14 @@
                              cache:NO];
     [UIView commitAnimations];
     
-    self.showMapButtonItem.imageView.highlighted = selected;
+   if(!selected)
+   {
+       [self.showMapButtonItem setImage:[UIImage imageNamed:@"list.png"] forState:UIControlStateNormal];
+   }
+    else
+    {
+        [self.showMapButtonItem setImage:[UIImage imageNamed:@"map.png"] forState:UIControlStateNormal];
+    }
 }
 
 #pragma mark Data CTS Delegate
@@ -225,9 +249,6 @@
 
 -(void) sortStationsByDistance
 {
-  //  if(!self.userLocation)
-    //    self.userLocation = [[CLLocation alloc] initWithLatitude:48.602573 longitude:7.776165];
-    
     for (StationVelhop* station in self.stations)
     {
         CLLocation* stationLoc = [[CLLocation alloc] initWithLatitude:station.coordinate.latitude
@@ -239,8 +260,8 @@
     [self.tableView reloadData];
     if(self.userLocation)
     {
-    if(self.refreshControl.isRefreshing)
-        [self.refreshControl endRefreshing];
+        if(self.refreshControl.isRefreshing)
+            [self.refreshControl endRefreshing];
     }
 }
 
@@ -254,13 +275,13 @@
     [self.navigationController pushViewController:stationVC animated:YES];
 }
 
-
 #pragma mark User Locaion Management
 
 -(void) onUserLocationUpdated:(NSNotification*) notification
 {
     if(notification.object)
     {
+        NSLog(@"onUserLocationUpdated with location : %@",notification.description);
         self.userLocation = (CLLocation*)notification.object;
         [self sortStationsByDistance];
     }

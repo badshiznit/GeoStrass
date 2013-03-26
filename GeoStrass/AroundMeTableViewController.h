@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "Tram+BusStations.h"
+#import "RoutesTableViewController.h"
+#import "SuperStation.h"
 
-@interface AroundMeTableViewController : UITableViewController<Tram_BusStationsDelegate>
+@interface AroundMeTableViewController : UITableViewController<Tram_BusStationsDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+
+@property (strong, nonatomic) IBOutlet UISearchBar *stopSearchBar;
+@property(nonatomic,strong) RoutesTableViewController* routesTableViewController;
+
+- (IBAction)refreshAction:(id)sender;
+- (IBAction)searchAction:(id)sender;
 
 @end

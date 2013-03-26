@@ -47,6 +47,8 @@ static LocalisationMgr* mgr = nil;
         }
     }
     
+    [self reset];
+    
     [self locateMe];
 }
 
@@ -60,11 +62,14 @@ static LocalisationMgr* mgr = nil;
     }
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
-    [self performSelector:@selector(stopUpdatingLocation:) withObject:@"Timed Out" afterDelay:3.0];
+    [self performSelector:@selector(stopUpdatingLocation:) withObject:@"Timed Out" afterDelay:2.0];
     NSLog(@"Updating....");
 }
 
-- (void)reset {
+- (void)reset
+{
+    [self.locationManager stopUpdatingLocation];
+    self.locationManager.delegate = nil;
     self.bestEffortAtLocation = nil;
 }
 
@@ -119,12 +124,12 @@ static LocalisationMgr* mgr = nil;
 - (void)stopUpdatingLocation:(NSString *)state
 {
     NSLog(@"stopUpdatingLocation with state : %@",state);
-    [self.locationManager stopUpdatingLocation];
-    self.locationManager.delegate = nil;
-    
-    NSLog(@"Send Best Location to dlegate : %@",self.bestEffortAtLocation);
+        
+    NSLog(@"Send Best Location to delegate : %@",self.bestEffortAtLocation);
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"onUserLocationUpdated" object:self.bestEffortAtLocation];
+    
+    [self reset];
 }
 
 

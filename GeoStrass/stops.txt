@@ -352,8 +352,8 @@ ETBOU_05,186B,48.575198081479854,7.754238098859787,Etoile Bourse,http://applis.c
 ETBOU_1B,186D,48.57432494741671,7.753654718399048,Etoile Bourse,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=186D
 ETDOR_01,187A,48.59474559165051,7.710917741060257,Etoile d'Or,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=187A
 ETDOR_02,187B,48.59483872452501,7.710473835468292,Etoile d'Or,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=187B
-ETOIL_01,186E,48.57462397978449,7.753481715917587,Etoile - Bourse,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=186E
-ETOIL_02,186F,48.57493809496641,7.7534642815589905,Etoile - Bourse,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=186F
+ETOIL_01,186E,48.57462397978449,7.753481715917587,Etoile  Bourse,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=186E
+ETOIL_02,186F,48.57493809496641,7.7534642815589905,Etoile  Bourse,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=186F
 ETPOL_01,189A,48.57162559003973,7.755255997180939,Etoile Polygone,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=189A
 ETPOL_02,189B,48.571527977441335,7.755679786205292,Etoile Polygone,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=189B
 ETPOL_03,189C,48.57163446390296,7.755631506443024,Etoile Polygone ,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=189C
@@ -799,7 +799,7 @@ ORMES_02,445B,48.51597361529649,7.722256779670715,Ormes,http://applis.cts-strasb
 OSBEL_01,447A,48.539874702789525,7.710259258747101,Ostwald Bellevue,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=447A
 OSBEL_02,447B,48.53952041209647,7.710295468568802,Ostwald Bellevue,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=447B
 OSHVI_01,448C,48.550964789862334,7.710414826869965,Ostwald Hôtel de Ville,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=448C
-OSHVI_02,448D,48.55103048324125,7.710205614566803,Ostwald Hotel de Ville,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=448D
+OSHVI_02,448D,48.55103048324125,7.710205614566803,Ostwald Hôtel de Ville,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=448D
 OSHVI_05,448A,48.550559974726404,7.710732668638229,Ostwald Hôtel de Ville,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=448A
 OSHVI_06,448B,48.55042769890324,7.71053820848465,Ostwald Hôtel de Ville,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=448B
 OSMAI_01,449A,48.54315998709383,7.70933523774147,Ostwald Eglise,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=449A
@@ -830,8 +830,8 @@ PARCC_01,462A,48.535032515353095,7.639548182487488,Parc,http://applis.cts-strasb
 PARCC_02,462B,48.53517815180569,7.6390814781188965,Parc,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=462B
 PARHI_01,463A,48.57279515179051,7.795113623142242,Jardin des Deux Rives,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=463A
 PARHI_02,463B,48.572704640390164,7.795306742191315,Jardin des Deux Rives,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=463B
-PARKE_01,463C,48.57258573301014,7.794880270957947,Jardin des Deux Rives NON,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=463C
-PARKE_02,463D,48.572127848248535,7.794477939605713,Jardin Des Deux Rives,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=463D
+PARKE_01,463C,48.57258573301014,7.794880270957947,Jardin des Deux Rives,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=463C
+PARKE_02,463D,48.572127848248535,7.794477939605713,Jardin des Deux Rives,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=463D
 PARLE_01,464A,48.59928495428655,7.766550779342651,Parlement Européen,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=464A
 PARLE_02,464B,48.59943217961773,7.767264246940613,Parlement Européen,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=464B
 PATRO_01,466A,48.65716461312439,7.829868346452713,Patronage,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=466A
@@ -1208,8 +1208,8 @@ ARBRI_05,32D,48.56853117897582,7.776861190795898,Aristide Briand ,http://applis.
 OBSER_F3,438D,48.581587295694916,7.770411819219589,Observatoire,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=438D
 ROTON_04,550D,48.59174928242405,7.725081145763397,Rotonde ,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=550D
 MIMIT_02,394B,48.61240805189394,7.696913927793503,Mittelhausbergen Mittelberg,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=394B
-CIIDO_01,99A,48.61294138135093,7.773647904396057,Cité de lill,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=99A
-CIIDO_02,99B,48.61290148158651,7.773271054029465,Cité de lill,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=99B
+CIIDO_01,99A,48.61294138135093,7.773647904396057,Cité de l'Ill,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=99A
+CIIDO_02,99B,48.61290148158651,7.773271054029465,Cité de l'Ill,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=99B
 BOECK_02,57B,48.597972614490466,7.778252797977871,Robertsau Boecklin,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=57B
 HAMAI_04,259D,48.59328855213274,7.698831247942394,Hautepierre Maillon,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=259D
 HOGAR_01,274D,48.628006455412915,7.758311915056652,Hoenheim Gare,http://applis.cts-strasbourg.fr/CTS_FicheHorairev3/ResultatsFiches.aspx?arret=274D

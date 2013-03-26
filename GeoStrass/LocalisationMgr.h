@@ -31,6 +31,7 @@
 
 @property(nonatomic,strong) CLLocationManager* locationManager;
 @property (nonatomic, retain) CLLocation *bestEffortAtLocation;
+@property (nonatomic,strong) CLPlacemark* placemark;
 
 -(void)locateMe;
 + (LocalisationMgr*) mgr;

@@ -68,6 +68,11 @@
     
     NSString* str = (dist > 1000)? [NSString stringWithFormat:@"%.1f km",dist/1000.0f] : [NSString stringWithFormat:@"%d m",(int)dist];
     
+    if(dist < 0)
+    {
+        str = @"";
+    }
+    
     self.distanceLabel.text = str;
 }
 

@@ -21,6 +21,7 @@
 
 @property(nonatomic,strong) id<Tram_BusStationsDelegate> delegate;
 @property(nonatomic,strong) NSMutableDictionary* stations;
+@property(nonatomic,strong) NSMutableDictionary* joinedStations;
 
 +(Tram_BusStations*) stations;
 

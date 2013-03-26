@@ -8,6 +8,7 @@
 
 #import "PersoTabBarController.h"
 #import "AroundMeTableViewController.h"
+#import "RoutesTableViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define SIZE 60
@@ -15,25 +16,22 @@
 @interface PersoTabBarController ()
 
 @property(nonatomic,strong) AroundMeTableViewController* aroundMeTableViewController;
+@property(nonatomic,strong) RoutesTableViewController* routesTableViewController;
 
 @end
 
 @implementation PersoTabBarController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self addCenterButtonWithImage:[UIImage imageNamed:@"aroundMe.png"] highlightImage:[UIImage imageNamed:@"aroundMeSelected.png"]];
+    
+    [self setSelectedIndex:3];
+    
+    UINavigationController* navc = [[self viewControllers] objectAtIndex:3];
+    self.routesTableViewController = [[navc viewControllers] objectAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,6 +88,7 @@
             UINavigationController* nvc = (UINavigationController*) segue.destinationViewController;
             
             self.aroundMeTableViewController = (AroundMeTableViewController*)[[nvc viewControllers] objectAtIndex:0];
+            self.aroundMeTableViewController.routesTableViewController = self.routesTableViewController;
         }
         else
         {

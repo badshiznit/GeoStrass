@@ -37,29 +37,13 @@ nbAvailableBikes:(NSInteger)nbAvailable
     NSMutableArray* tmp = [[NSMutableArray alloc] initWithArray:stations];
     
     NSLog(@"Unsorted ");
-    for (StationVelhop* s in tmp) {
+    for (StationVelhop* s in tmp)
+    {
         NSLog(@"Station : %@ est à %f",s.name,s.distanceFromUser);
     }
 
     return [tmp sortedArrayUsingSelector:@selector(compare:)];
 }
-
-/*
--(NSComparisonResult) compareStation:(StationVelhop*) station1 withAnother:(StationVelhop*) station2
-{
-    if(station1.distanceFromUser > station2.distanceFromUser)
-    {
-        return NSOrderedDescending;
-    }
-    else
-    {
-        if(station1.distanceFromUser < station2.distanceFromUser)
-        {
-         return NSOrderedAscending;
-        }
-    }
-    return NSOrderedSame;
-}*/
 
 -(NSComparisonResult) compare:(StationVelhop*) station
 {
