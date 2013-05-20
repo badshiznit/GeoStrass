@@ -9,7 +9,7 @@
 #import "AroundMeTableViewController.h"
 #import "LocalisationMgr.h"
 #import "AutoScrollLabel.h"
-#import "AroundMeMasterCell.h"
+#import "NextPassagesViewController.h"
 
 #define STOP_NAME_TAG     111
 #define STOP_IMAGE_TAG    112
@@ -190,6 +190,7 @@
         AroundMeMasterCell* masterCell = (AroundMeMasterCell*)cell;
         if(masterCell)
         {
+            masterCell.delegate = self;
             SuperStation* masterStation = [self.filteredStations objectAtIndex:indexPath.row];
             [masterCell setMasterStation:masterStation withScope:self.searchDisplayController.searchBar.selectedScopeButtonIndex];
         }
@@ -198,6 +199,7 @@
 	{
        //[self fillCell:cell firIndexPath:indexPath];
         AroundMeMasterCell* masterCell = (AroundMeMasterCell*)cell;
+         masterCell.delegate = self;
         if(masterCell)
         {
              SuperStation* masterStation = [self.sortedSuperStations objectAtIndex:indexPath.row];
@@ -213,6 +215,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NextPassagesViewController* stationInfosViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StationInfosViewController"];
+    
+    SuperStation* masterStation;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+	{
+        masterStation = [self.filteredStations objectAtIndex:indexPath.row];
+    }
+	else
+	{
+        masterStation = [self.sortedSuperStations objectAtIndex:indexPath.row];
+    }
+    
+    stationInfosViewController.station = masterStation;
+    [self.navigationController pushViewController:stationInfosViewController animated:YES];
 }
 
 - (IBAction)refreshAction:(id)sender
@@ -417,5 +435,16 @@
    // [self.tableView reloadData];
 }
 
+#pragma mark - AroundMeMasterCell Delegate Method
+
+-(void) didSelectRouteAtCell:(AroundMeMasterCell *)aroundMeMasterCell
+{
+    NSLog(@"didSelectRouteAtCell %@",aroundMeMasterCell.selectedRoute.routeShortName);
+
+    NextPassagesViewController* stationInfosViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"StationInfosViewController"];
+    stationInfosViewController.station = aroundMeMasterCell.masterStation;
+    stationInfosViewController.selectedRouteShortName = aroundMeMasterCell.selectedRoute.routeShortName;
+    [self.navigationController pushViewController:stationInfosViewController animated:YES];
+}
 
 @end

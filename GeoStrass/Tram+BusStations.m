@@ -177,8 +177,6 @@ static Tram_BusStations* stations;
     NSLog(@"end findRoutesForStops");
 }
 
-
-
 /*
  -(void) joinStations
  {

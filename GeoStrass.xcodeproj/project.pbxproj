@@ -55,6 +55,14 @@
 		564391CE169CBF2200C03B62 /* StationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 564391CD169CBF2200C03B62 /* StationAnnotation.m */; };
 		564391D4169F1DBE00C03B62 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 564391D3169F1DBD00C03B62 /* arrow.png */; };
 		564391DA169F203C00C03B62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564391D9169F203C00C03B62 /* QuartzCore.framework */; };
+		5649DEF51712DDFB002F9165 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5649DEF41712DDFB002F9165 /* CFNetwork.framework */; };
+		5649DF031712DF82002F9165 /* NSDate+ISO8601Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DEF81712DF82002F9165 /* NSDate+ISO8601Parsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5649DF041712DF82002F9165 /* NSDate+ISO8601Unparsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DEFA1712DF82002F9165 /* NSDate+ISO8601Unparsing.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5649DF051712DF82002F9165 /* ServiceSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DEFC1712DF82002F9165 /* ServiceSvc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5649DF061712DF82002F9165 /* USAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DEFE1712DF82002F9165 /* USAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5649DF071712DF82002F9165 /* USGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DF001712DF82002F9165 /* USGlobals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5649DF081712DF82002F9165 /* xsd.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DF021712DF82002F9165 /* xsd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5649DF0C1712E44E002F9165 /* TrajetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5649DF0B1712E44E002F9165 /* TrajetViewController.m */; };
 		56670DCA165EBCFB0058A149 /* busss.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC4165EBCFB0058A149 /* busss.png */; };
 		56670DCB165EBCFB0058A149 /* direction.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC5165EBCFB0058A149 /* direction.png */; };
 		56670DCC165EBCFB0058A149 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 56670DC6165EBCFB0058A149 /* like.png */; };
@@ -106,6 +114,8 @@
 		56C6DC1916D76476004F05EC /* 72.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56C6DBFF16D76476004F05EC /* 72.jpg */; };
 		56C6DC1D16D7A647004F05EC /* 24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56C6DC1B16D7A645004F05EC /* 24.jpg */; };
 		56C6DC1E16D7A647004F05EC /* 22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56C6DC1C16D7A646004F05EC /* 22.jpg */; };
+		56C74A451716F60900E37037 /* NextPassagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C74A441716F60900E37037 /* NextPassagesViewController.m */; };
+		56C74A4917184D6500E37037 /* RouteNextTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C74A4817184D6500E37037 /* RouteNextTimeViewController.m */; };
 		56E9506F1645BB46001FF70C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E9506E1645BB46001FF70C /* UIKit.framework */; };
 		56E950711645BB46001FF70C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E950701645BB46001FF70C /* Foundation.framework */; };
 		56E950731645BB46001FF70C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E950721645BB46001FF70C /* CoreGraphics.framework */; };
@@ -188,6 +198,21 @@
 		564391CD169CBF2200C03B62 /* StationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationAnnotation.m; sourceTree = "<group>"; };
 		564391D3169F1DBD00C03B62 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		564391D9169F203C00C03B62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5649DEF41712DDFB002F9165 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5649DEF71712DF82002F9165 /* NSDate+ISO8601Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Parsing.h"; sourceTree = "<group>"; };
+		5649DEF81712DF82002F9165 /* NSDate+ISO8601Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Parsing.m"; sourceTree = "<group>"; };
+		5649DEF91712DF82002F9165 /* NSDate+ISO8601Unparsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ISO8601Unparsing.h"; sourceTree = "<group>"; };
+		5649DEFA1712DF82002F9165 /* NSDate+ISO8601Unparsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ISO8601Unparsing.m"; sourceTree = "<group>"; };
+		5649DEFB1712DF82002F9165 /* ServiceSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceSvc.h; sourceTree = "<group>"; };
+		5649DEFC1712DF82002F9165 /* ServiceSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceSvc.m; sourceTree = "<group>"; };
+		5649DEFD1712DF82002F9165 /* USAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USAdditions.h; sourceTree = "<group>"; };
+		5649DEFE1712DF82002F9165 /* USAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USAdditions.m; sourceTree = "<group>"; };
+		5649DEFF1712DF82002F9165 /* USGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USGlobals.h; sourceTree = "<group>"; };
+		5649DF001712DF82002F9165 /* USGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USGlobals.m; sourceTree = "<group>"; };
+		5649DF011712DF82002F9165 /* xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xsd.h; sourceTree = "<group>"; };
+		5649DF021712DF82002F9165 /* xsd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xsd.m; sourceTree = "<group>"; };
+		5649DF0A1712E44E002F9165 /* TrajetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrajetViewController.h; sourceTree = "<group>"; };
+		5649DF0B1712E44E002F9165 /* TrajetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrajetViewController.m; sourceTree = "<group>"; };
 		56670DC4165EBCFB0058A149 /* busss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = busss.png; sourceTree = "<group>"; };
 		56670DC5165EBCFB0058A149 /* direction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = direction.png; sourceTree = "<group>"; };
 		56670DC6165EBCFB0058A149 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
@@ -246,6 +271,10 @@
 		56C6DBFF16D76476004F05EC /* 72.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 72.jpg; sourceTree = "<group>"; };
 		56C6DC1B16D7A645004F05EC /* 24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 24.jpg; sourceTree = "<group>"; };
 		56C6DC1C16D7A646004F05EC /* 22.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 22.jpg; sourceTree = "<group>"; };
+		56C74A431716F60900E37037 /* NextPassagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextPassagesViewController.h; sourceTree = "<group>"; };
+		56C74A441716F60900E37037 /* NextPassagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextPassagesViewController.m; sourceTree = "<group>"; };
+		56C74A4717184D6500E37037 /* RouteNextTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteNextTimeViewController.h; sourceTree = "<group>"; };
+		56C74A4817184D6500E37037 /* RouteNextTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteNextTimeViewController.m; sourceTree = "<group>"; };
 		56E9506A1645BB46001FF70C /* GeoStrass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoStrass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E9506E1645BB46001FF70C /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		56E950701645BB46001FF70C /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -303,6 +332,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5649DEF51712DDFB002F9165 /* CFNetwork.framework in Frameworks */,
 				564391DA169F203C00C03B62 /* QuartzCore.framework in Frameworks */,
 				566F65BE165ED65400BEF8B6 /* MapKit.framework in Frameworks */,
 				56E9506F1645BB46001FF70C /* UIKit.framework in Frameworks */,
@@ -406,6 +436,35 @@
 			name = "Details Station";
 			sourceTree = "<group>";
 		};
+		5649DEF61712DF81002F9165 /* WSDL */ = {
+			isa = PBXGroup;
+			children = (
+				5649DF091712E42B002F9165 /* test */,
+				5649DEF71712DF82002F9165 /* NSDate+ISO8601Parsing.h */,
+				5649DEF81712DF82002F9165 /* NSDate+ISO8601Parsing.m */,
+				5649DEF91712DF82002F9165 /* NSDate+ISO8601Unparsing.h */,
+				5649DEFA1712DF82002F9165 /* NSDate+ISO8601Unparsing.m */,
+				5649DEFB1712DF82002F9165 /* ServiceSvc.h */,
+				5649DEFC1712DF82002F9165 /* ServiceSvc.m */,
+				5649DEFD1712DF82002F9165 /* USAdditions.h */,
+				5649DEFE1712DF82002F9165 /* USAdditions.m */,
+				5649DEFF1712DF82002F9165 /* USGlobals.h */,
+				5649DF001712DF82002F9165 /* USGlobals.m */,
+				5649DF011712DF82002F9165 /* xsd.h */,
+				5649DF021712DF82002F9165 /* xsd.m */,
+			);
+			path = WSDL;
+			sourceTree = SOURCE_ROOT;
+		};
+		5649DF091712E42B002F9165 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				5649DF0A1712E44E002F9165 /* TrajetViewController.h */,
+				5649DF0B1712E44E002F9165 /* TrajetViewController.m */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
 		56670DC3165EBCFB0058A149 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +563,25 @@
 			path = bus;
 			sourceTree = "<group>";
 		};
+		56C74A421716F5BE00E37037 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				56C74A431716F60900E37037 /* NextPassagesViewController.h */,
+				56C74A441716F60900E37037 /* NextPassagesViewController.m */,
+				56C74A4617184D1F00E37037 /* Next times */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		56C74A4617184D1F00E37037 /* Next times */ = {
+			isa = PBXGroup;
+			children = (
+				56C74A4717184D6500E37037 /* RouteNextTimeViewController.h */,
+				56C74A4817184D6500E37037 /* RouteNextTimeViewController.m */,
+			);
+			name = "Next times";
+			sourceTree = "<group>";
+		};
 		56E9505F1645BB46001FF70C = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +610,7 @@
 		56E9506D1645BB46001FF70C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5649DEF41712DDFB002F9165 /* CFNetwork.framework */,
 				564391D9169F203C00C03B62 /* QuartzCore.framework */,
 				566F65BD165ED65400BEF8B6 /* MapKit.framework */,
 				56E9506E1645BB46001FF70C /* UIKit.framework */,
@@ -545,6 +624,7 @@
 		56E950741645BB46001FF70C /* GeoStrass */ = {
 			isa = PBXGroup;
 			children = (
+				5649DEF61712DF81002F9165 /* WSDL */,
 				5628F92516DF965400A3B086 /* Calculs */,
 				560E8ED216D3BEB70031C540 /* Bus/Trams */,
 				56FFEB9E16BC1B4A00FC4D50 /* Models */,
@@ -615,6 +695,7 @@
 		56FFEB9716BC0C4300FC4D50 /* Around me */ = {
 			isa = PBXGroup;
 			children = (
+				56C74A421716F5BE00E37037 /* Details */,
 				56FFEB9816BC0C7200FC4D50 /* AroundMeTableViewController.h */,
 				56FFEB9916BC0C7200FC4D50 /* AroundMeTableViewController.m */,
 				56FFEB9B16BC147000FC4D50 /* Tram+BusStations.h */,
@@ -881,6 +962,15 @@
 				5628F92816DF967900A3B086 /* ComputeRoutes.m in Sources */,
 				568220C016E4E08000879C38 /* SuperStation.m in Sources */,
 				568220C316E4F63B00879C38 /* AroundMeMasterCell.m in Sources */,
+				5649DF031712DF82002F9165 /* NSDate+ISO8601Parsing.m in Sources */,
+				5649DF041712DF82002F9165 /* NSDate+ISO8601Unparsing.m in Sources */,
+				5649DF051712DF82002F9165 /* ServiceSvc.m in Sources */,
+				5649DF061712DF82002F9165 /* USAdditions.m in Sources */,
+				5649DF071712DF82002F9165 /* USGlobals.m in Sources */,
+				5649DF081712DF82002F9165 /* xsd.m in Sources */,
+				5649DF0C1712E44E002F9165 /* TrajetViewController.m in Sources */,
+				56C74A451716F60900E37037 /* NextPassagesViewController.m in Sources */,
+				56C74A4917184D6500E37037 /* RouteNextTimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,6 +1085,19 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoStrass/GeoStrass-Prefix.pch";
 				INFOPLIST_FILE = "GeoStrass/GeoStrass-Info.plist";
+				"OTHER_CFLAGS[arch=*]" = "-I/usr/include/libxml2";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					CoreLocation,
+					"-lxml2",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-ObjC",
+					"-framework",
+					CoreLocation,
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1007,6 +1110,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoStrass/GeoStrass-Prefix.pch";
 				INFOPLIST_FILE = "GeoStrass/GeoStrass-Info.plist";
+				"OTHER_CFLAGS[arch=*]" = "-I/usr/include/libxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

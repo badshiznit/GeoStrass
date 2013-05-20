@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SuperStation.h"
+#import "ServiceSvc.h"
 
-@interface StationInfosViewController : UIViewController
+@interface NextPassagesViewController : UIViewController<UIScrollViewDelegate,ServiceSoapBindingResponseDelegate>
+
+@property(nonatomic,strong) SuperStation* station;
+@property(nonatomic,strong) NSString* selectedRouteShortName;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *routesScrollView;
+@property (strong, nonatomic) IBOutlet UIScrollView *detailsScrollView;
 
 @end

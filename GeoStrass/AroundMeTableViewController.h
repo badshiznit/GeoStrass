@@ -10,8 +10,9 @@
 #import "Tram+BusStations.h"
 #import "RoutesTableViewController.h"
 #import "SuperStation.h"
+#import "AroundMeMasterCell.h"
 
-@interface AroundMeTableViewController : UITableViewController<Tram_BusStationsDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface AroundMeTableViewController : UITableViewController<Tram_BusStationsDelegate, UISearchBarDelegate, UISearchDisplayDelegate,AroundMeMasterCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UISearchBar *stopSearchBar;
 @property(nonatomic,strong) RoutesTableViewController* routesTableViewController;

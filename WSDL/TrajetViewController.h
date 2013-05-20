@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServiceSvc.h"
 
-@interface TrajetViewController : UIViewController
+@interface TrajetViewController : UIViewController<ServiceSoapBindingResponseDelegate>
+
+@property (strong, nonatomic) IBOutlet UIButton *send;
+- (IBAction)sendSoap:(id)sender;
 
 @end

@@ -7,24 +7,14 @@
 //
 
 #import "AroundMeMasterCell.h"
-#import "Route.h"
+
 
 @implementation AroundMeMasterCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    NSLog(@"gestureRecognizerShouldBegin");
+    return YES;
 }
 
 -(void) setMasterStation:(SuperStation *)masterStation withScope:(NSInteger)scope
@@ -64,7 +54,6 @@
         }
     }
     
-    
     CGFloat scrollHeight = self.routesView.frame.size.height;
     CGFloat scrollWidth = _masterStation.tramRoutes.count * 30 + 40*3 + _masterStation.busRoutes.count*40;
     self.routesView.contentSize = CGSizeMake(scrollWidth, scrollHeight);
@@ -89,7 +78,12 @@
         Route* route = (Route*)[_masterStation.tramRoutes objectAtIndex:i];
         
         UIImageView* imageV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",route.routeShortName]]];
-        
+        imageV.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnTram:)];
+       
+        tapped.numberOfTapsRequired = 1;
+        [imageV addGestureRecognizer:tapped];
+         tapped.view.tag = i;
         CGRect rectInit = self.firstImageV.frame;
         imageV.frame = CGRectMake(rectInit.origin.x + 40 + i*30, rectInit.origin.y, 30, 30);
         
@@ -126,7 +120,12 @@
         Route* route = (Route*)[_masterStation.busRoutes objectAtIndex:i];
         
         UIImageView* imageV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",route.routeShortName]]];
+        imageV.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnBus:)];
         
+        tapped.numberOfTapsRequired = 1;
+        [imageV addGestureRecognizer:tapped];
+        tapped.view.tag = i;
         CGRect rectInit = busImageV.frame;
         
         CGFloat decalage = rectInit.origin.x + 40 + i*40;
@@ -134,11 +133,37 @@
         
         [self.routesView addSubview:imageV];
     }
-
 }
 -(void)showNavettes
 {
     
+}
+
+-(void) setSelectedWithRoute:(Route*)route
+{
+    self.selectedRoute = route;
+    [self.delegate didSelectRouteAtCell:self];
+
+}
+
+-(void) tapOnBus:(id) sender
+{
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    int index = gesture.view.tag;
+    Route* route = (Route*)[_masterStation.busRoutes objectAtIndex:index];
+    NSLog(@"tapOnBus %d : %@      %@",index,route.routeShortName,gesture.description);
+    
+    [self setSelectedWithRoute:route];
+}
+
+-(void) tapOnTram:(id) sender
+{
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    int index = gesture.view.tag;
+    Route* route = (Route*)[_masterStation.tramRoutes objectAtIndex:index];
+    NSLog(@"tapOnTram %d : %@",index,route.routeShortName);
+    
+        [self setSelectedWithRoute:route];
 }
 
 @end

@@ -89,7 +89,7 @@
     //NSLog(@"Compute distance from UserLocation : %@ to %@",userLocation.description,station.stopLocation.description);
     self.distanceFromUser = [station.stopLocation distanceFromLocation:userLocation];
     
-    NSLog(@"Distance = %f",self.distanceFromUser);
+   // NSLog(@"Distance = %f",self.distanceFromUser);
 }
 
 +(NSArray*)sortArrayOfStations:(NSArray*) stations fromLocation:(CLLocation*) userLocation
